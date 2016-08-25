@@ -1,9 +1,11 @@
 # SamsaraApi.VehicleUpdateParam
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**groupId** | **Integer** |  | 
-**vehicles** | [**[Vehicle]**](Vehicle.md) |  | 
+Name | Type | Description
+------------ | ------------- | -------------
+**groupId** | **Integer** | Group ID to query.
+**vehicles** | [**[Vehicle]**](Vehicle.md) |
 
-
+## Example
+> var vehicles = [{"id": 66, "name": "New Name", "note": "New Note"}]
+> var param = SamsaraApi.VehicleUpdateParam(885, vehicles)

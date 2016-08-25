@@ -52,10 +52,10 @@
    * Constructs a new <code>AddressParam</code>.
    * @alias module:models/AddressParam
    * @class
-   * @param groupId {Integer} 
-   * @param name {String} 
-   * @param address {String} 
-   * @param radius {Integer} 
+   * @param groupId {Integer} Group ID to query.
+   * @param name {String} Name of the location to add to the address book.
+   * @param address {String} The address of the entry to add, as it would be recognized if provided to maps.google.com.
+   * @param radius {Integer} Radius in meters of the address (used for matching vehicle trip stops to this location).
    */
   var exports = function(groupId, name, address, radius) {
     var _this = this;
@@ -94,18 +94,22 @@
   }
 
   /**
+   * Group ID to query.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
+   * Name of the location to add to the address book.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
+   * The address of the entry to add, as it would be recognized if provided to maps.google.com.
    * @member {String} address
    */
   exports.prototype['address'] = undefined;
   /**
+   * Radius in meters of the address (used for matching vehicle trip stops to this location).
    * @member {Integer} radius
    */
   exports.prototype['radius'] = undefined;

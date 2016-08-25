@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**widgetId** | **Integer** |  | 
-**field** | **String** |  | 
+**widgetId** | **Integer** | Sensor ID to query. | 
+**field** | **String** | Field to query. | 
 
 
 <a name="FieldEnum"></a>

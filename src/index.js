@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/AddressParam', 'models/ErrorResponse', 'models/GroupParam', 'models/HistoryParam', 'models/HumidityResponse', 'models/HumidityResponseSensors', 'models/InlineResponse200', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/Sensor', 'models/SensorHistoryResponse', 'models/SensorHistoryResponseResults', 'models/SensorParam', 'models/SensorshistorySeries', 'models/TemperatureResponse', 'models/TemperatureResponseSensors', 'models/TripResponse', 'models/TripResponseTrips', 'models/TripsParam', 'models/Vehicle', 'models/VehicleLocation', 'models/VehicleUpdateParam', 'client/DefaultApi'], factory);
+    define(['ApiClient', 'models/AddressParam', 'models/ErrorResponse', 'models/GroupParam', 'models/HistoryParam', 'models/HumidityResponse', 'models/HumidityResponseSensors', 'models/InlineResponse200', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/Sensor', 'models/SensorHistoryResponse', 'models/SensorHistoryResponseResults', 'models/SensorParam', 'models/SensorshistorySeries', 'models/TemperatureResponse', 'models/TemperatureResponseSensors', 'models/TripResponse', 'models/TripResponseEndCoordinates', 'models/TripResponseStartCoordinates', 'models/TripResponseTrips', 'models/TripsParam', 'models/Vehicle', 'models/VehicleLocation', 'models/VehicleUpdateParam', 'client/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./models/AddressParam'), require('./models/ErrorResponse'), require('./models/GroupParam'), require('./models/HistoryParam'), require('./models/HumidityResponse'), require('./models/HumidityResponseSensors'), require('./models/InlineResponse200'), require('./models/InlineResponse2001'), require('./models/InlineResponse2002'), require('./models/Sensor'), require('./models/SensorHistoryResponse'), require('./models/SensorHistoryResponseResults'), require('./models/SensorParam'), require('./models/SensorshistorySeries'), require('./models/TemperatureResponse'), require('./models/TemperatureResponseSensors'), require('./models/TripResponse'), require('./models/TripResponseTrips'), require('./models/TripsParam'), require('./models/Vehicle'), require('./models/VehicleLocation'), require('./models/VehicleUpdateParam'), require('./client/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./models/AddressParam'), require('./models/ErrorResponse'), require('./models/GroupParam'), require('./models/HistoryParam'), require('./models/HumidityResponse'), require('./models/HumidityResponseSensors'), require('./models/InlineResponse200'), require('./models/InlineResponse2001'), require('./models/InlineResponse2002'), require('./models/Sensor'), require('./models/SensorHistoryResponse'), require('./models/SensorHistoryResponseResults'), require('./models/SensorParam'), require('./models/SensorshistorySeries'), require('./models/TemperatureResponse'), require('./models/TemperatureResponseSensors'), require('./models/TripResponse'), require('./models/TripResponseEndCoordinates'), require('./models/TripResponseStartCoordinates'), require('./models/TripResponseTrips'), require('./models/TripsParam'), require('./models/Vehicle'), require('./models/VehicleLocation'), require('./models/VehicleUpdateParam'), require('./client/DefaultApi'));
   }
-}(function(ApiClient, AddressParam, ErrorResponse, GroupParam, HistoryParam, HumidityResponse, HumidityResponseSensors, InlineResponse200, InlineResponse2001, InlineResponse2002, Sensor, SensorHistoryResponse, SensorHistoryResponseResults, SensorParam, SensorshistorySeries, TemperatureResponse, TemperatureResponseSensors, TripResponse, TripResponseTrips, TripsParam, Vehicle, VehicleLocation, VehicleUpdateParam, DefaultApi) {
+}(function(ApiClient, AddressParam, ErrorResponse, GroupParam, HistoryParam, HumidityResponse, HumidityResponseSensors, InlineResponse200, InlineResponse2001, InlineResponse2002, Sensor, SensorHistoryResponse, SensorHistoryResponseResults, SensorParam, SensorshistorySeries, TemperatureResponse, TemperatureResponseSensors, TripResponse, TripResponseEndCoordinates, TripResponseStartCoordinates, TripResponseTrips, TripsParam, Vehicle, VehicleLocation, VehicleUpdateParam, DefaultApi) {
   'use strict';
 
   /**
@@ -155,6 +155,16 @@
      * @property {module:models/TripResponse}
      */
     TripResponse: TripResponse,
+    /**
+     * The TripResponseEndCoordinates model constructor.
+     * @property {module:models/TripResponseEndCoordinates}
+     */
+    TripResponseEndCoordinates: TripResponseEndCoordinates,
+    /**
+     * The TripResponseStartCoordinates model constructor.
+     * @property {module:models/TripResponseStartCoordinates}
+     */
+    TripResponseStartCoordinates: TripResponseStartCoordinates,
     /**
      * The TripResponseTrips model constructor.
      * @property {module:models/TripResponseTrips}

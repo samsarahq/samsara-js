@@ -86,14 +86,17 @@
   }
 
   /**
+   * ID of the sensor.
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
+   * Currently reported ambient temperature in millidegrees celsius.
    * @member {Integer} ambientTemperature
    */
   exports.prototype['ambientTemperature'] = undefined;
   /**
+   * Currently reported probe temperature in millidegrees celsius. If no probe is connected, this parameter will not be reported.
    * @member {Integer} probeTemperature
    */
   exports.prototype['probeTemperature'] = undefined;

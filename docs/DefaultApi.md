@@ -2,24 +2,23 @@
 
 All URIs are relative to *https://api.samsara.com/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**addFleetAddress**](DefaultApi.md#addFleetAddress) | **POST** /fleet/add_address | Add an address book entry for the group.
-[**getFleet**](DefaultApi.md#getFleet) | **POST** /fleet/list | Get the vehicles for the group.
-[**getFleetLocations**](DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | Get the GPS locations for all vehicles in the group.
-[**getFleetTrips**](DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | Get the trips for the specified vehicle.
-[**getSensors**](DefaultApi.md#getSensors) | **POST** /sensors/list | Get the sensors for a group.
-[**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | Get the historical data for the sensors.
-[**getSensorsHumidity**](DefaultApi.md#getSensorsHumidity) | **POST** /sensors/humidity | Get the current humidity readings for the specified sensors.
-[**getSensorsTemperature**](DefaultApi.md#getSensorsTemperature) | **POST** /sensors/temperature | Get the current temperature readings for the specified sensors.
-[**updateVehicles**](DefaultApi.md#updateVehicles) | **POST** /fleet/set_data | Update the metadata for a vehicle.
+Method | Description
+------------- | -------------
+[**addFleetAddress**](DefaultApi.md#addFleetAddress) | This method adds an address book entry to the specified group.
+[**getFleet**](DefaultApi.md#getFleet) | This method returns a list of the vehicles in the Samsara Cloud and information about them.
+[**getFleetLocations**](DefaultApi.md#getFleetLocations) | This method returns the current location in latitude and longitude of all vehicles in a requested group.
+[**getFleetTrips**](DefaultApi.md#getFleetTrips) | This method returns a set of historical trips data for the specified vehicle in the specified time range.
+[**getSensors**](DefaultApi.md#getSensors) | This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+[**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+[**getSensorsHumidity**](DefaultApi.md#getSensorsHumidity) | This method returns the current relative humidity for the requested sensors.
+[**getSensorsTemperature**](DefaultApi.md#getSensorsTemperature) | This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+[**updateVehicles**](DefaultApi.md#updateVehicles) | This method enables the mutation of metadata for vehicles in the Samsara Cloud.
 
 
 <a name="addFleetAddress"></a>
 # **addFleetAddress**
-> addFleetAddress(accessToken, addressParam)
 
-Add an address book entry for the group.
+This method adds an address book entry to the specified group.
 
 ### Example
 ```javascript
@@ -27,7 +26,7 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
 var addressParam = new SamsaraApi.AddressParam(); // AddressParam | 
 
@@ -46,27 +45,17 @@ apiInstance.addFleetAddress(accessToken, addressParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
+ **accessToken** | **String**| Samsara API access token. | 
  **addressParam** | [**AddressParam**](AddressParam.md)|  | 
 
-### Return type
+### Response
 
 null (empty response body)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getFleet"></a>
 # **getFleet**
-> InlineResponse200 getFleet(accessToken, groupParam)
 
-Get the vehicles for the group.
+This method returns a list of the vehicles in the Samsara Cloud and information about them.
 
 ### Example
 ```javascript
@@ -74,9 +63,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var groupParam = new SamsaraApi.GroupParam(); // GroupParam | 
+var groupParam = new SamsaraApi.GroupParam(); // GroupParam | Group ID to query.
 
 
 var callback = function(error, data, response) {
@@ -93,27 +82,17 @@ apiInstance.getFleet(accessToken, groupParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **groupParam** | [**GroupParam**](GroupParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
 
-### Return type
+### Response
 
 [**InlineResponse200**](InlineResponse200.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getFleetLocations"></a>
 # **getFleetLocations**
-> InlineResponse2001 getFleetLocations(accessToken, groupParam)
 
-Get the GPS locations for all vehicles in the group.
+This method returns the current location in latitude and longitude of all vehicles in a requested group.
 
 ### Example
 ```javascript
@@ -121,9 +100,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var groupParam = new SamsaraApi.GroupParam(); // GroupParam | 
+var groupParam = new SamsaraApi.GroupParam(); // GroupParam | Group ID to query.
 
 
 var callback = function(error, data, response) {
@@ -140,27 +119,17 @@ apiInstance.getFleetLocations(accessToken, groupParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **groupParam** | [**GroupParam**](GroupParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
 
-### Return type
+### Response
 
 [**InlineResponse2001**](InlineResponse2001.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getFleetTrips"></a>
 # **getFleetTrips**
-> TripResponse getFleetTrips(accessToken, tripsParam)
 
-Get the trips for the specified vehicle.
+This method returns a set of historical trips data for the specified vehicle in the specified time range.
 
 ### Example
 ```javascript
@@ -168,9 +137,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var tripsParam = new SamsaraApi.TripsParam(); // TripsParam | 
+var tripsParam = new SamsaraApi.TripsParam(); // TripsParam | Group ID, vehicle ID and time range to query.
 
 
 var callback = function(error, data, response) {
@@ -187,27 +156,17 @@ apiInstance.getFleetTrips(accessToken, tripsParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **tripsParam** | [**TripsParam**](TripsParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **tripsParam** | [**TripsParam**](TripsParam.md)| Group ID, vehicle ID and time range to query. | 
 
-### Return type
+### Response
 
 [**TripResponse**](TripResponse.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getSensors"></a>
 # **getSensors**
-> InlineResponse2002 getSensors(accessToken, groupParam)
 
-Get the sensors for a group.
+This method returns a list of the sensor objects in the Samsara Cloud and information about them.
 
 ### Example
 ```javascript
@@ -215,9 +174,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var groupParam = new SamsaraApi.GroupParam(); // GroupParam | 
+var groupParam = new SamsaraApi.GroupParam(); // GroupParam | Group ID to query.
 
 
 var callback = function(error, data, response) {
@@ -234,27 +193,17 @@ apiInstance.getSensors(accessToken, groupParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **groupParam** | [**GroupParam**](GroupParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
 
-### Return type
+### Response
 
 [**InlineResponse2002**](InlineResponse2002.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getSensorsHistory"></a>
 # **getSensorsHistory**
-> SensorHistoryResponse getSensorsHistory(accessToken, historyParam)
 
-Get the historical data for the sensors.
+This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
 
 ### Example
 ```javascript
@@ -262,9 +211,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var historyParam = new SamsaraApi.HistoryParam(); // HistoryParam | 
+var historyParam = new SamsaraApi.HistoryParam(); // HistoryParam | Group ID, time range and resolution, and list of sensor ID, field pairs to query.
 
 
 var callback = function(error, data, response) {
@@ -281,27 +230,17 @@ apiInstance.getSensorsHistory(accessToken, historyParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **historyParam** | [**HistoryParam**](HistoryParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **historyParam** | [**HistoryParam**](HistoryParam.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query. | 
 
-### Return type
+### Response
 
 [**SensorHistoryResponse**](SensorHistoryResponse.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getSensorsHumidity"></a>
 # **getSensorsHumidity**
-> HumidityResponse getSensorsHumidity(accessToken, sensorParam)
 
-Get the current humidity readings for the specified sensors.
+This method returns the current relative humidity for the requested sensors.
 
 ### Example
 ```javascript
@@ -309,9 +248,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var sensorParam = new SamsaraApi.SensorParam(); // SensorParam | 
+var sensorParam = new SamsaraApi.SensorParam(); // SensorParam | Group ID and list of sensor IDs to query.
 
 
 var callback = function(error, data, response) {
@@ -328,27 +267,17 @@ apiInstance.getSensorsHumidity(accessToken, sensorParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **sensorParam** | [**SensorParam**](SensorParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **sensorParam** | [**SensorParam**](SensorParam.md)| Group ID and list of sensor IDs to query. | 
 
-### Return type
+### Response
 
 [**HumidityResponse**](HumidityResponse.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="getSensorsTemperature"></a>
 # **getSensorsTemperature**
-> TemperatureResponse getSensorsTemperature(accessToken, sensorParam)
 
-Get the current temperature readings for the specified sensors.
+This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
 
 ### Example
 ```javascript
@@ -356,9 +285,9 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
-var sensorParam = new SamsaraApi.SensorParam(); // SensorParam | 
+var sensorParam = new SamsaraApi.SensorParam(); // SensorParam | Group ID and list of sensor IDs to query.
 
 
 var callback = function(error, data, response) {
@@ -375,27 +304,17 @@ apiInstance.getSensorsTemperature(accessToken, sensorParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **sensorParam** | [**SensorParam**](SensorParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **sensorParam** | [**SensorParam**](SensorParam.md)| Group ID and list of sensor IDs to query. | 
 
-### Return type
+### Response
 
 [**TemperatureResponse**](TemperatureResponse.md)
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="updateVehicles"></a>
 # **updateVehicles**
-> updateVehicles(accessToken, vehicleUpdateParam)
 
-Update the metadata for a vehicle.
+This method enables the mutation of metadata for vehicles in the Samsara Cloud.
 
 ### Example
 ```javascript
@@ -403,7 +322,7 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
 var vehicleUpdateParam = new SamsaraApi.VehicleUpdateParam(); // VehicleUpdateParam | 
 
@@ -422,19 +341,9 @@ apiInstance.updateVehicles(accessToken, vehicleUpdateParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
+ **accessToken** | **String**| Samsara API access token. | 
  **vehicleUpdateParam** | [**VehicleUpdateParam**](VehicleUpdateParam.md)|  | 
 
-### Return type
+### Response
 
 null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-

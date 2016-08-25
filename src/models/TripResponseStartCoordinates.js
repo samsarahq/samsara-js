@@ -34,7 +34,7 @@
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.Vehicle = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.TripResponseStartCoordinates = factory(root.SamsaraApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,64 +43,53 @@
 
 
   /**
-   * The Vehicle model module.
-   * @module models/Vehicle
+   * The TripResponseStartCoordinates model module.
+   * @module models/TripResponseStartCoordinates
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>Vehicle</code>.
-   * A vehicle object.
-   * @alias module:models/Vehicle
+   * Constructs a new <code>TripResponseStartCoordinates</code>.
+   * Start (latitude, longitude) in decimal degrees.
+   * @alias module:models/TripResponseStartCoordinates
    * @class
-   * @param id {Integer} ID of the vehicle.
    */
-  var exports = function(id) {
+  var exports = function() {
     var _this = this;
 
-    _this['id'] = id;
 
 
   };
 
   /**
-   * Constructs a <code>Vehicle</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>TripResponseStartCoordinates</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:models/Vehicle} obj Optional instance to populate.
-   * @return {module:models/Vehicle} The populated <code>Vehicle</code> instance.
+   * @param {module:models/TripResponseStartCoordinates} obj Optional instance to populate.
+   * @return {module:models/TripResponseStartCoordinates} The populated <code>TripResponseStartCoordinates</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+      if (data.hasOwnProperty('latitude')) {
+        obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Integer');
       }
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('note')) {
-        obj['note'] = ApiClient.convertToType(data['note'], 'String');
+      if (data.hasOwnProperty('longitude')) {
+        obj['longitude'] = ApiClient.convertToType(data['longitude'], 'Integer');
       }
     }
     return obj;
   }
 
   /**
-   * ID of the vehicle.
-   * @member {Integer} id
+   * @member {Integer} latitude
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['latitude'] = undefined;
   /**
-   * Name of the vehicle.
-   * @member {String} name
+   * @member {Integer} longitude
    */
-  exports.prototype['name'] = undefined;
-  /**
-   * @member {String} note
-   */
-  exports.prototype['note'] = undefined;
+  exports.prototype['longitude'] = undefined;
 
 
 

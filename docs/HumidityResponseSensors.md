@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**humidity** | **Integer** |  | [optional] 
+**id** | **Integer** | ID of the sensor. | [optional] 
+**humidity** | **Integer** | Currently reported relative humidity in percent, from 0-100. | [optional] 
 
 

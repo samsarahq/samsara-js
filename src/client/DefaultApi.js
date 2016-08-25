@@ -65,8 +65,8 @@
      */
 
     /**
-     * Add an address book entry for the group.
-     * @param {String} accessToken 
+     * This method adds an address book entry to the specified group.
+     * @param {String} accessToken Samsara API access token.
      * @param {module:models/AddressParam} addressParam 
      * @param {module:client/DefaultApi~addFleetAddressCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -95,7 +95,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -115,9 +115,9 @@
      */
 
     /**
-     * Get the vehicles for the group.
-     * @param {String} accessToken 
-     * @param {module:models/GroupParam} groupParam 
+     * This method returns a list of the vehicles in the Samsara Cloud and information about them.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getFleetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/InlineResponse200}
      */
@@ -146,7 +146,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = InlineResponse200;
 
@@ -166,9 +166,9 @@
      */
 
     /**
-     * Get the GPS locations for all vehicles in the group.
-     * @param {String} accessToken 
-     * @param {module:models/GroupParam} groupParam 
+     * This method returns the current location in latitude and longitude of all vehicles in a requested group.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getFleetLocationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/InlineResponse2001}
      */
@@ -197,7 +197,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = InlineResponse2001;
 
@@ -217,9 +217,9 @@
      */
 
     /**
-     * Get the trips for the specified vehicle.
-     * @param {String} accessToken 
-     * @param {module:models/TripsParam} tripsParam 
+     * This method returns a set of historical trips data for the specified vehicle in the specified time range.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/TripsParam} tripsParam Group ID, vehicle ID and time range to query.
      * @param {module:client/DefaultApi~getFleetTripsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/TripResponse}
      */
@@ -248,7 +248,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TripResponse;
 
@@ -268,9 +268,9 @@
      */
 
     /**
-     * Get the sensors for a group.
-     * @param {String} accessToken 
-     * @param {module:models/GroupParam} groupParam 
+     * This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getSensorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/InlineResponse2002}
      */
@@ -299,7 +299,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = InlineResponse2002;
 
@@ -319,9 +319,9 @@
      */
 
     /**
-     * Get the historical data for the sensors.
-     * @param {String} accessToken 
-     * @param {module:models/HistoryParam} historyParam 
+     * This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/HistoryParam} historyParam Group ID, time range and resolution, and list of sensor ID, field pairs to query.
      * @param {module:client/DefaultApi~getSensorsHistoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/SensorHistoryResponse}
      */
@@ -350,7 +350,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SensorHistoryResponse;
 
@@ -370,9 +370,9 @@
      */
 
     /**
-     * Get the current humidity readings for the specified sensors.
-     * @param {String} accessToken 
-     * @param {module:models/SensorParam} sensorParam 
+     * This method returns the current relative humidity for the requested sensors.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/DefaultApi~getSensorsHumidityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/HumidityResponse}
      */
@@ -401,7 +401,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = HumidityResponse;
 
@@ -421,9 +421,9 @@
      */
 
     /**
-     * Get the current temperature readings for the specified sensors.
-     * @param {String} accessToken 
-     * @param {module:models/SensorParam} sensorParam 
+     * This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/DefaultApi~getSensorsTemperatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/TemperatureResponse}
      */
@@ -452,7 +452,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TemperatureResponse;
 
@@ -472,8 +472,8 @@
      */
 
     /**
-     * Update the metadata for a vehicle.
-     * @param {String} accessToken 
+     * This method enables the mutation of metadata for vehicles in the Samsara Cloud.
+     * @param {String} accessToken Samsara API access token.
      * @param {module:models/VehicleUpdateParam} vehicleUpdateParam 
      * @param {module:client/DefaultApi~updateVehiclesCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -502,7 +502,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
 

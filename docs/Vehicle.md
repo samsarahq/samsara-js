@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | 
-**name** | **String** |  | [optional] 
+**id** | **Integer** | ID of the vehicle. | 
+**name** | **String** | Name of the vehicle. | [optional] 
 **note** | **String** |  | [optional] 
 
 
