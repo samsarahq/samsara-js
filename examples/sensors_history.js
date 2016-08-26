@@ -6,7 +6,6 @@ a sensor.
 var SamsaraApi = require('samsara_api');
 
 //var accessToken = '<SAMSARA_API_TOKEN>';
-
 //var groupId = <GROUP_ID>;
 //var sensorId = <SENSOR_ID>;
 //var startMs = <startMs>;
