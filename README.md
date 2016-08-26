@@ -50,17 +50,17 @@ Certain API calls require this value.
 
 All URIs are relative to *https://api.samsara.com/v1*
 
-Method | HTTP request | Description
------------- | ------------- | -------------
-[**getFleet**](docs/DefaultApi.md#getFleet) | **POST** /fleet/list | Get the vehicles for the group.
-[**getFleetLocations**](docs/DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | Get the GPS locations for all vehicles in the group.
-[**getFleetTrips**](docs/DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | Get the trips for the specified vehicle.
-[**addFleetAddress**](docs/DefaultApi.md#addFleetAddress) | **POST** /fleet/add_address | Add an address book entry for the group.
-[**updateVehicles**](docs/DefaultApi.md#updateVehicles) | **POST** /fleet/set_data | Update the metadata for a vehicle.
-[**getSensors**](docs/DefaultApi.md#getSensors) | **POST** /sensors/list | Get the sensors for a group.
-[**getSensorsTemperature**](docs/DefaultApi.md#getSensorsTemperature) | **POST** /sensors/temperature | Get the current temperature readings for the specified sensors.
-[**getSensorsHumidity**](docs/DefaultApi.md#getSensorsHumidity) | **POST** /sensors/humidity | Get the current humidity readings for the specified sensors.
-[**getSensorsHistory**](docs/DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | Get the historical data for the sensors.
+Method | Description
+------------ | -------------
+[**getFleet**](docs/DefaultApi.md#getFleet) | Get the vehicles for the group.
+[**getFleetLocations**](docs/DefaultApi.md#getFleetLocations) | Get the GPS locations for all vehicles in the group.
+[**getFleetTrips**](docs/DefaultApi.md#getFleetTrips) | Get the trips for the specified vehicle.
+[**addFleetAddress**](docs/DefaultApi.md#addFleetAddress) | Add an address book entry for the group.
+[**updateVehicles**](docs/DefaultApi.md#updateVehicles) | Update the metadata for a vehicle.
+[**getSensors**](docs/DefaultApi.md#getSensors) | Get the sensors for a group.
+[**getSensorsTemperature**](docs/DefaultApi.md#getSensorsTemperature) | Get the current temperature readings for the specified sensors.
+[**getSensorsHumidity**](docs/DefaultApi.md#getSensorsHumidity) | Get the current humidity readings for the specified sensors.
+[**getSensorsHistory**](docs/DefaultApi.md#getSensorsHistory) | Get the historical data for the sensors.
 
 ## Request Parameters
 
