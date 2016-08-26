@@ -43,10 +43,10 @@ apiInstance.addFleetAddress(accessToken, addressParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **addressParam** | [**AddressParam**](AddressParam.md)|  | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **addressParam** | [**AddressParam**](params/AddressParam.md)|
 
 ### Response
 
@@ -80,14 +80,14 @@ apiInstance.getFleet(accessToken, groupParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **groupParam** | [**GroupParam**](params/GroupParam.md)| Group ID to query.
 
 ### Response
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse200**](responses/InlineResponse200.md)
 
 <a name="getFleetLocations"></a>
 # **getFleetLocations**
@@ -117,14 +117,14 @@ apiInstance.getFleetLocations(accessToken, groupParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **groupParam** | [**GroupParam**](params/GroupParam.md)| Group ID to query.
 
 ### Response
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2001**](responses/InlineResponse2001.md)
 
 <a name="getFleetTrips"></a>
 # **getFleetTrips**
@@ -154,14 +154,14 @@ apiInstance.getFleetTrips(accessToken, tripsParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **tripsParam** | [**TripsParam**](TripsParam.md)| Group ID, vehicle ID and time range to query. | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **tripsParam** | [**TripsParam**](params/TripsParam.md)| Group ID, vehicle ID and time range to query.
 
 ### Response
 
-[**TripResponse**](TripResponse.md)
+[**TripResponse**](responses/TripResponse.md)
 
 <a name="getSensors"></a>
 # **getSensors**
@@ -191,14 +191,14 @@ apiInstance.getSensors(accessToken, groupParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **groupParam** | [**GroupParam**](params/GroupParam.md)| Group ID to query.
 
 ### Response
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2002**](responses/InlineResponse2002.md)
 
 <a name="getSensorsHistory"></a>
 # **getSensorsHistory**
@@ -228,14 +228,14 @@ apiInstance.getSensorsHistory(accessToken, historyParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **historyParam** | [**HistoryParam**](HistoryParam.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query. | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **historyParam** | [**HistoryParam**](params/HistoryParam.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query.
 
 ### Response
 
-[**SensorHistoryResponse**](SensorHistoryResponse.md)
+[**SensorHistoryResponse**](responses/SensorHistoryResponse.md)
 
 <a name="getSensorsHumidity"></a>
 # **getSensorsHumidity**
@@ -265,14 +265,14 @@ apiInstance.getSensorsHumidity(accessToken, sensorParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **sensorParam** | [**SensorParam**](SensorParam.md)| Group ID and list of sensor IDs to query. | 
+Name | Type | Description 
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **sensorParam** | [**SensorParam**](params/SensorParam.md)| Group ID and list of sensor IDs to query.
 
 ### Response
 
-[**HumidityResponse**](HumidityResponse.md)
+[**HumidityResponse**](responses/HumidityResponse.md)
 
 <a name="getSensorsTemperature"></a>
 # **getSensorsTemperature**
@@ -302,14 +302,14 @@ apiInstance.getSensorsTemperature(accessToken, sensorParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **sensorParam** | [**SensorParam**](SensorParam.md)| Group ID and list of sensor IDs to query. | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **sensorParam** | [**SensorParam**](params/SensorParam.md)| Group ID and list of sensor IDs to query.
 
 ### Response
 
-[**TemperatureResponse**](TemperatureResponse.md)
+[**TemperatureResponse**](responses/TemperatureResponse.md)
 
 <a name="updateVehicles"></a>
 # **updateVehicles**
@@ -339,10 +339,10 @@ apiInstance.updateVehicles(accessToken, vehicleUpdateParam, callback);
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token. | 
- **vehicleUpdateParam** | [**VehicleUpdateParam**](VehicleUpdateParam.md)|  | 
+Name | Type | Description
+------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token.
+ **vehicleUpdateParam** | [**VehicleUpdateParam**](params/VehicleUpdateParam.md)|
 
 ### Response
 
