@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new SamsaraApi.TripResponseEndCoordinates();
+    instance = new SamsaraApi.GroupDriversParam();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,22 +58,16 @@
       object[property] = value;
   }
 
-  describe('TripResponseEndCoordinates', function() {
-    it('should create an instance of TripResponseEndCoordinates', function() {
-      // uncomment below and update the code to test TripResponseEndCoordinates
-      //var instane = new SamsaraApi.TripResponseEndCoordinates();
-      //expect(instance).to.be.a(SamsaraApi.TripResponseEndCoordinates);
+  describe('GroupDriversParam', function() {
+    it('should create an instance of GroupDriversParam', function() {
+      // uncomment below and update the code to test GroupDriversParam
+      //var instane = new SamsaraApi.GroupDriversParam();
+      //expect(instance).to.be.a(SamsaraApi.GroupDriversParam);
     });
 
-    it('should have the property latitude (base name: "latitude")', function() {
-      // uncomment below and update the code to test the property latitude
-      //var instane = new SamsaraApi.TripResponseEndCoordinates();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property longitude (base name: "longitude")', function() {
-      // uncomment below and update the code to test the property longitude
-      //var instane = new SamsaraApi.TripResponseEndCoordinates();
+    it('should have the property groupId (base name: "groupId")', function() {
+      // uncomment below and update the code to test the property groupId
+      //var instane = new SamsaraApi.GroupDriversParam();
       //expect(instance).to.be();
     });
 

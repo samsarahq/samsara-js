@@ -50,10 +50,9 @@
 
   /**
    * Constructs a new <code>Sensor</code>.
-   * Contains information about a sensor.
    * @alias module:models/Sensor
    * @class
-   * @param id {Integer} ID of the sensor.
+   * @param id {Integer} 
    */
   var exports = function(id) {
     var _this = this;
@@ -88,17 +87,14 @@
   }
 
   /**
-   * ID of the sensor.
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Name of the sensor.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * MAC address of the sensor.
    * @member {String} macAddress
    */
   exports.prototype['macAddress'] = undefined;

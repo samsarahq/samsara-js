@@ -34,7 +34,7 @@
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.TripsParam = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.HosLogsResponseLogs = factory(root.SamsaraApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,35 +43,36 @@
 
 
   /**
-   * The TripsParam model module.
-   * @module models/TripsParam
+   * The HosLogsResponseLogs model module.
+   * @module models/HosLogsResponseLogs
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>TripsParam</code>.
-   * @alias module:models/TripsParam
+   * Constructs a new <code>HosLogsResponseLogs</code>.
+   * @alias module:models/HosLogsResponseLogs
    * @class
-   * @param groupId {Integer} 
-   * @param vehicleId {Integer} 
-   * @param startMs {Integer} 
-   * @param endMs {Integer} 
    */
-  var exports = function(groupId, vehicleId, startMs, endMs) {
+  var exports = function() {
     var _this = this;
 
-    _this['groupId'] = groupId;
-    _this['vehicleId'] = vehicleId;
-    _this['startMs'] = startMs;
-    _this['endMs'] = endMs;
+
+
+
+
+
+
+
+
+
   };
 
   /**
-   * Constructs a <code>TripsParam</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>HosLogsResponseLogs</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:models/TripsParam} obj Optional instance to populate.
-   * @return {module:models/TripsParam} The populated <code>TripsParam</code> instance.
+   * @param {module:models/HosLogsResponseLogs} obj Optional instance to populate.
+   * @return {module:models/HosLogsResponseLogs} The populated <code>HosLogsResponseLogs</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -83,11 +84,26 @@
       if (data.hasOwnProperty('vehicleId')) {
         obj['vehicleId'] = ApiClient.convertToType(data['vehicleId'], 'Integer');
       }
-      if (data.hasOwnProperty('startMs')) {
-        obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Integer');
+      if (data.hasOwnProperty('driverId')) {
+        obj['driverId'] = ApiClient.convertToType(data['driverId'], 'Integer');
       }
-      if (data.hasOwnProperty('endMs')) {
-        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Integer');
+      if (data.hasOwnProperty('logStartMs')) {
+        obj['logStartMs'] = ApiClient.convertToType(data['logStartMs'], 'Integer');
+      }
+      if (data.hasOwnProperty('statusType')) {
+        obj['statusType'] = ApiClient.convertToType(data['statusType'], 'String');
+      }
+      if (data.hasOwnProperty('locCity')) {
+        obj['locCity'] = ApiClient.convertToType(data['locCity'], 'String');
+      }
+      if (data.hasOwnProperty('locState')) {
+        obj['locState'] = ApiClient.convertToType(data['locState'], 'String');
+      }
+      if (data.hasOwnProperty('locLat')) {
+        obj['locLat'] = ApiClient.convertToType(data['locLat'], 'Number');
+      }
+      if (data.hasOwnProperty('locLng')) {
+        obj['locLng'] = ApiClient.convertToType(data['locLng'], 'Number');
       }
     }
     return obj;
@@ -102,13 +118,33 @@
    */
   exports.prototype['vehicleId'] = undefined;
   /**
-   * @member {Integer} startMs
+   * @member {Integer} driverId
    */
-  exports.prototype['startMs'] = undefined;
+  exports.prototype['driverId'] = undefined;
   /**
-   * @member {Integer} endMs
+   * @member {Integer} logStartMs
    */
-  exports.prototype['endMs'] = undefined;
+  exports.prototype['logStartMs'] = undefined;
+  /**
+   * @member {String} statusType
+   */
+  exports.prototype['statusType'] = undefined;
+  /**
+   * @member {String} locCity
+   */
+  exports.prototype['locCity'] = undefined;
+  /**
+   * @member {String} locState
+   */
+  exports.prototype['locState'] = undefined;
+  /**
+   * @member {Number} locLat
+   */
+  exports.prototype['locLat'] = undefined;
+  /**
+   * @member {Number} locLng
+   */
+  exports.prototype['locLng'] = undefined;
 
 
 

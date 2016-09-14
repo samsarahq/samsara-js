@@ -52,7 +52,7 @@
    * Constructs a new <code>VehicleUpdateParam</code>.
    * @alias module:models/VehicleUpdateParam
    * @class
-   * @param groupId {Integer} Group ID to query.
+   * @param groupId {Integer} 
    * @param vehicles {Array.<module:models/Vehicle>} 
    */
   var exports = function(groupId, vehicles) {
@@ -84,7 +84,6 @@
   }
 
   /**
-   * Group ID to query.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;

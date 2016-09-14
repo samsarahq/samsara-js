@@ -50,12 +50,12 @@
 
   /**
    * Constructs a new <code>ErrorResponse</code>.
-   * Contains the error response when a request fails.
    * @alias module:models/ErrorResponse
    * @class
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -78,20 +78,25 @@
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
+      if (data.hasOwnProperty('fields')) {
+        obj['fields'] = ApiClient.convertToType(data['fields'], 'String');
+      }
     }
     return obj;
   }
 
   /**
-   * HTTP status code returned.
    * @member {Integer} status_code
    */
   exports.prototype['status_code'] = undefined;
   /**
-   * Error message returned.
    * @member {String} message
    */
   exports.prototype['message'] = undefined;
+  /**
+   * @member {String} fields
+   */
+  exports.prototype['fields'] = undefined;
 
 
 

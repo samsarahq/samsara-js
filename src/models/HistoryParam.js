@@ -52,10 +52,10 @@
    * Constructs a new <code>HistoryParam</code>.
    * @alias module:models/HistoryParam
    * @class
-   * @param groupId {Integer} Group ID to query.
-   * @param startMs {Integer} Beginning of the time range, specified in milliseconds UNIX time.
-   * @param endMs {Integer} End of the time range, specified in milliseconds UNIX time.
-   * @param stepMs {Integer} Time resolution for which data should be returned, in milliseconds.
+   * @param groupId {Integer} 
+   * @param startMs {Integer} 
+   * @param endMs {Integer} 
+   * @param stepMs {Integer} 
    * @param series {Array.<module:models/SensorshistorySeries>} 
    */
   var exports = function(groupId, startMs, endMs, stepMs, series) {
@@ -103,22 +103,18 @@
   }
 
   /**
-   * Group ID to query.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
-   * Beginning of the time range, specified in milliseconds UNIX time.
    * @member {Integer} startMs
    */
   exports.prototype['startMs'] = undefined;
   /**
-   * End of the time range, specified in milliseconds UNIX time.
    * @member {Integer} endMs
    */
   exports.prototype['endMs'] = undefined;
   /**
-   * Time resolution for which data should be returned, in milliseconds.
    * @member {Integer} stepMs
    */
   exports.prototype['stepMs'] = undefined;

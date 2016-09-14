@@ -25,70 +25,62 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'models/HosLogsResponseLogs'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./HosLogsResponseLogs'));
   } else {
     // Browser globals (root is window)
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.SensorHistoryResponseResults = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.HosLogsResponse = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.HosLogsResponseLogs);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, HosLogsResponseLogs) {
   'use strict';
 
 
 
 
   /**
-   * The SensorHistoryResponseResults model module.
-   * @module models/SensorHistoryResponseResults
+   * The HosLogsResponse model module.
+   * @module models/HosLogsResponse
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>SensorHistoryResponseResults</code>.
-   * @alias module:models/SensorHistoryResponseResults
+   * Constructs a new <code>HosLogsResponse</code>.
+   * @alias module:models/HosLogsResponse
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
   };
 
   /**
-   * Constructs a <code>SensorHistoryResponseResults</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>HosLogsResponse</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:models/SensorHistoryResponseResults} obj Optional instance to populate.
-   * @return {module:models/SensorHistoryResponseResults} The populated <code>SensorHistoryResponseResults</code> instance.
+   * @param {module:models/HosLogsResponse} obj Optional instance to populate.
+   * @return {module:models/HosLogsResponse} The populated <code>HosLogsResponse</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('timeMs')) {
-        obj['timeMs'] = ApiClient.convertToType(data['timeMs'], 'Integer');
-      }
-      if (data.hasOwnProperty('series')) {
-        obj['series'] = ApiClient.convertToType(data['series'], ['Integer']);
+      if (data.hasOwnProperty('logs')) {
+        obj['logs'] = ApiClient.convertToType(data['logs'], [HosLogsResponseLogs]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} timeMs
+   * @member {Array.<module:models/HosLogsResponseLogs>} logs
    */
-  exports.prototype['timeMs'] = undefined;
-  /**
-   * @member {Array.<Integer>} series
-   */
-  exports.prototype['series'] = undefined;
+  exports.prototype['logs'] = undefined;
 
 
 

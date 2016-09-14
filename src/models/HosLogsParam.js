@@ -34,7 +34,7 @@
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.TripResponseStartCoordinates = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.HosLogsParam = factory(root.SamsaraApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,53 +43,72 @@
 
 
   /**
-   * The TripResponseStartCoordinates model module.
-   * @module models/TripResponseStartCoordinates
+   * The HosLogsParam model module.
+   * @module models/HosLogsParam
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>TripResponseStartCoordinates</code>.
-   * Start (latitude, longitude) in decimal degrees.
-   * @alias module:models/TripResponseStartCoordinates
+   * Constructs a new <code>HosLogsParam</code>.
+   * @alias module:models/HosLogsParam
    * @class
+   * @param groupId {Integer} 
+   * @param driverId {Integer} 
+   * @param startMs {Integer} 
+   * @param endMs {Integer} 
    */
-  var exports = function() {
+  var exports = function(groupId, driverId, startMs, endMs) {
     var _this = this;
 
-
-
+    _this['groupId'] = groupId;
+    _this['driverId'] = driverId;
+    _this['startMs'] = startMs;
+    _this['endMs'] = endMs;
   };
 
   /**
-   * Constructs a <code>TripResponseStartCoordinates</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>HosLogsParam</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:models/TripResponseStartCoordinates} obj Optional instance to populate.
-   * @return {module:models/TripResponseStartCoordinates} The populated <code>TripResponseStartCoordinates</code> instance.
+   * @param {module:models/HosLogsParam} obj Optional instance to populate.
+   * @return {module:models/HosLogsParam} The populated <code>HosLogsParam</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('latitude')) {
-        obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Integer');
+      if (data.hasOwnProperty('groupId')) {
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Integer');
       }
-      if (data.hasOwnProperty('longitude')) {
-        obj['longitude'] = ApiClient.convertToType(data['longitude'], 'Integer');
+      if (data.hasOwnProperty('driverId')) {
+        obj['driverId'] = ApiClient.convertToType(data['driverId'], 'Integer');
+      }
+      if (data.hasOwnProperty('startMs')) {
+        obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Integer');
+      }
+      if (data.hasOwnProperty('endMs')) {
+        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Integer');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} latitude
+   * @member {Integer} groupId
    */
-  exports.prototype['latitude'] = undefined;
+  exports.prototype['groupId'] = undefined;
   /**
-   * @member {Integer} longitude
+   * @member {Integer} driverId
    */
-  exports.prototype['longitude'] = undefined;
+  exports.prototype['driverId'] = undefined;
+  /**
+   * @member {Integer} startMs
+   */
+  exports.prototype['startMs'] = undefined;
+  /**
+   * @member {Integer} endMs
+   */
+  exports.prototype['endMs'] = undefined;
 
 
 

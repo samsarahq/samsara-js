@@ -50,11 +50,10 @@
 
   /**
    * Constructs a new <code>SensorshistorySeries</code>.
-   * Sensor ID and field to query.
    * @alias module:models/SensorshistorySeries
    * @class
-   * @param widgetId {Integer} Sensor ID to query.
-   * @param field {module:models/SensorshistorySeries.FieldEnum} Field to query.
+   * @param widgetId {Integer} 
+   * @param field {module:models/SensorshistorySeries.FieldEnum} 
    */
   var exports = function(widgetId, field) {
     var _this = this;
@@ -85,12 +84,10 @@
   }
 
   /**
-   * Sensor ID to query.
    * @member {Integer} widgetId
    */
   exports.prototype['widgetId'] = undefined;
   /**
-   * Field to query.
    * @member {module:models/SensorshistorySeries.FieldEnum} field
    */
   exports.prototype['field'] = undefined;

@@ -34,7 +34,7 @@
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.SensorHistoryResponseResults = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.DriversResposeDrivers = factory(root.SamsaraApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,14 +43,14 @@
 
 
   /**
-   * The SensorHistoryResponseResults model module.
-   * @module models/SensorHistoryResponseResults
+   * The DriversResposeDrivers model module.
+   * @module models/DriversResposeDrivers
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>SensorHistoryResponseResults</code>.
-   * @alias module:models/SensorHistoryResponseResults
+   * Constructs a new <code>DriversResposeDrivers</code>.
+   * @alias module:models/DriversResposeDrivers
    * @class
    */
   var exports = function() {
@@ -61,34 +61,34 @@
   };
 
   /**
-   * Constructs a <code>SensorHistoryResponseResults</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>DriversResposeDrivers</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:models/SensorHistoryResponseResults} obj Optional instance to populate.
-   * @return {module:models/SensorHistoryResponseResults} The populated <code>SensorHistoryResponseResults</code> instance.
+   * @param {module:models/DriversResposeDrivers} obj Optional instance to populate.
+   * @return {module:models/DriversResposeDrivers} The populated <code>DriversResposeDrivers</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('timeMs')) {
-        obj['timeMs'] = ApiClient.convertToType(data['timeMs'], 'Integer');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
       }
-      if (data.hasOwnProperty('series')) {
-        obj['series'] = ApiClient.convertToType(data['series'], ['Integer']);
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} timeMs
+   * @member {Integer} id
    */
-  exports.prototype['timeMs'] = undefined;
+  exports.prototype['id'] = undefined;
   /**
-   * @member {Array.<Integer>} series
+   * @member {String} name
    */
-  exports.prototype['series'] = undefined;
+  exports.prototype['name'] = undefined;
 
 
 

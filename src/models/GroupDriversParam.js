@@ -34,7 +34,7 @@
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.TripResponseEndCoordinates = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.GroupDriversParam = factory(root.SamsaraApi.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -43,53 +43,45 @@
 
 
   /**
-   * The TripResponseEndCoordinates model module.
-   * @module models/TripResponseEndCoordinates
+   * The GroupDriversParam model module.
+   * @module models/GroupDriversParam
    * @version 1.0.0
    */
 
   /**
-   * Constructs a new <code>TripResponseEndCoordinates</code>.
-   * End (latitude, longitude) in decimal degrees.
-   * @alias module:models/TripResponseEndCoordinates
+   * Constructs a new <code>GroupDriversParam</code>.
+   * @alias module:models/GroupDriversParam
    * @class
+   * @param groupId {Integer} 
    */
-  var exports = function() {
+  var exports = function(groupId) {
     var _this = this;
 
-
-
+    _this['groupId'] = groupId;
   };
 
   /**
-   * Constructs a <code>TripResponseEndCoordinates</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>GroupDriversParam</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:models/TripResponseEndCoordinates} obj Optional instance to populate.
-   * @return {module:models/TripResponseEndCoordinates} The populated <code>TripResponseEndCoordinates</code> instance.
+   * @param {module:models/GroupDriversParam} obj Optional instance to populate.
+   * @return {module:models/GroupDriversParam} The populated <code>GroupDriversParam</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('latitude')) {
-        obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Integer');
-      }
-      if (data.hasOwnProperty('longitude')) {
-        obj['longitude'] = ApiClient.convertToType(data['longitude'], 'Integer');
+      if (data.hasOwnProperty('groupId')) {
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Integer');
       }
     }
     return obj;
   }
 
   /**
-   * @member {Integer} latitude
+   * @member {Integer} groupId
    */
-  exports.prototype['latitude'] = undefined;
-  /**
-   * @member {Integer} longitude
-   */
-  exports.prototype['longitude'] = undefined;
+  exports.prototype['groupId'] = undefined;
 
 
 

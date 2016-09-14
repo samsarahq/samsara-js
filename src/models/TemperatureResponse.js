@@ -50,7 +50,6 @@
 
   /**
    * Constructs a new <code>TemperatureResponse</code>.
-   * Contains the current temperatures of a sensor.
    * @alias module:models/TemperatureResponse
    * @class
    */

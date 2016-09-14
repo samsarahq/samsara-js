@@ -82,12 +82,10 @@
   }
 
   /**
-   * ID of the sensor.
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * Currently reported relative humidity in percent, from 0-100.
    * @member {Integer} humidity
    */
   exports.prototype['humidity'] = undefined;

@@ -79,6 +79,26 @@
         done();
       });
     });
+    describe('getFleetDrivers', function() {
+      it('should call getFleetDrivers successfully', function(done) {
+        //uncomment below and update the code to test getFleetDrivers
+        //instance.getFleetDrivers(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getFleetHosLogs', function() {
+      it('should call getFleetHosLogs successfully', function(done) {
+        //uncomment below and update the code to test getFleetHosLogs
+        //instance.getFleetHosLogs(pet, function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getFleetLocations', function() {
       it('should call getFleetLocations successfully', function(done) {
         //uncomment below and update the code to test getFleetLocations

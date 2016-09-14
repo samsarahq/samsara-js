@@ -50,7 +50,6 @@
 
   /**
    * Constructs a new <code>TripResponse</code>.
-   * Contains the trips for the vehicle in the requested timeframe. A trip is represented as an object that contains startMs, startLocation, startCoordinates, endMs, endLocation, and endCoordinates.
    * @alias module:models/TripResponse
    * @class
    */

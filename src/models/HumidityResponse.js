@@ -50,7 +50,6 @@
 
   /**
    * Constructs a new <code>HumidityResponse</code>.
-   * Contains the current humidity of a sensor.
    * @alias module:models/HumidityResponse
    * @class
    */

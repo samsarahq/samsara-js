@@ -6,6 +6,8 @@ Method | Description
 ------------- | -------------
 [**addFleetAddress**](DefaultApi.md#addFleetAddress) | This method adds an address book entry to the specified group.
 [**getFleet**](DefaultApi.md#getFleet) | This method returns a list of the vehicles in the Samsara Cloud and information about them.
+[**getFleetDrivers**](DefaultApi.md#getFleetDrivers) | Get all the drivers for the specified group.
+[**getFleetHosLogs**](DefaultApi.md#getFleetHosLogs) | Get the HOS (hours of service) logs for the specified driver.
 [**getFleetLocations**](DefaultApi.md#getFleetLocations) | This method returns the current location in latitude and longitude of all vehicles in a requested group.
 [**getFleetTrips**](DefaultApi.md#getFleetTrips) | This method returns a set of historical trips data for the specified vehicle in the specified time range.
 [**getSensors**](DefaultApi.md#getSensors) | This method returns a list of the sensor objects in the Samsara Cloud and information about them.
@@ -88,6 +90,100 @@ Name | Type | Description
 ### Response
 
 [**InlineResponse200**](responses/InlineResponse200.md)
+
+<a name="getFleetDrivers"></a>
+# **getFleetDrivers**
+> DriversRespose getFleetDrivers(accessToken, groupDriversParam)
+
+Get all the drivers for the specified group.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | 
+
+var groupDriversParam = new SamsaraApi.GroupDriversParam(); // GroupDriversParam | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFleetDrivers(accessToken, groupDriversParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**|  | 
+ **groupDriversParam** | [**GroupDriversParam**](GroupDriversParam.md)|  | 
+
+### Return type
+
+[**DriversRespose**](DriversRespose.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getFleetHosLogs"></a>
+# **getFleetHosLogs**
+> HosLogsResponse getFleetHosLogs(accessToken, hosLogsParam)
+
+Get the HOS (hours of service) logs for the specified driver.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | 
+
+var hosLogsParam = new SamsaraApi.HosLogsParam(); // HosLogsParam | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFleetHosLogs(accessToken, hosLogsParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**|  | 
+ **hosLogsParam** | [**HosLogsParam**](HosLogsParam.md)|  | 
+
+### Return type
+
+[**HosLogsResponse**](HosLogsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="getFleetLocations"></a>
 # **getFleetLocations**

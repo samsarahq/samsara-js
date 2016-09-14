@@ -39,7 +39,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new SamsaraApi.TripResponseStartCoordinates();
+    instance = new SamsaraApi.DriversRespose();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,22 +58,16 @@
       object[property] = value;
   }
 
-  describe('TripResponseStartCoordinates', function() {
-    it('should create an instance of TripResponseStartCoordinates', function() {
-      // uncomment below and update the code to test TripResponseStartCoordinates
-      //var instane = new SamsaraApi.TripResponseStartCoordinates();
-      //expect(instance).to.be.a(SamsaraApi.TripResponseStartCoordinates);
+  describe('DriversRespose', function() {
+    it('should create an instance of DriversRespose', function() {
+      // uncomment below and update the code to test DriversRespose
+      //var instane = new SamsaraApi.DriversRespose();
+      //expect(instance).to.be.a(SamsaraApi.DriversRespose);
     });
 
-    it('should have the property latitude (base name: "latitude")', function() {
-      // uncomment below and update the code to test the property latitude
-      //var instane = new SamsaraApi.TripResponseStartCoordinates();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property longitude (base name: "longitude")', function() {
-      // uncomment below and update the code to test the property longitude
-      //var instane = new SamsaraApi.TripResponseStartCoordinates();
+    it('should have the property drivers (base name: "drivers")', function() {
+      // uncomment below and update the code to test the property drivers
+      //var instane = new SamsaraApi.DriversRespose();
       //expect(instance).to.be();
     });
 
