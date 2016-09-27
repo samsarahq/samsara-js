@@ -64,22 +64,22 @@ Method | Description
 
 ## Request Parameters
 
-- [SamsaraApi.GroupParam](docs/GroupParam.md)
-- [SamsaraApi.TripsParam](docs/TripsParam.md) 
-- [SamsaraApi.AddressParam](docs/AddressParam.md)
-- [SamsaraApi.VehicleUpdateParam](docs/VehicleUpdateParam.md)
-- [SamsaraApi.HistoryParam](docs/HistoryParam.md)
+- [SamsaraApi.GroupParam](docs/params/GroupParam.md)
+- [SamsaraApi.TripsParam](docs/params/TripsParam.md) 
+- [SamsaraApi.AddressParam](docs/params/AddressParam.md)
+- [SamsaraApi.VehicleUpdateParam](docs/params/VehicleUpdateParam.md)
+- [SamsaraApi.HistoryParam](docs/params/HistoryParam.md)
 
 ## Responses
 
-- [SamsaraApi.Vehicle](docs/Vehicle.md)
-- [SamsaraApi.VehicleLocation](docs/VehicleLocation.md) 
-- [SamsaraApi.TripResponse](docs/TripResponse.md)
-- [SamsaraApi.Sensor](docs/Sensor.md)
-- [SamsaraApi.TemperatureResponse](docs/TemperatureResponse.md)
-- [SamsaraApi.HumidityResponse](docs/HumidityResponse.md)
-- [SamsaraApi.SensorHistoryResponse](docs/SensorHistoryResponse.md)
-- [SamsaraApi.ErrorResponse](docs/ErrorResponse.md)
+- [SamsaraApi.Vehicle](docs/responses/Vehicle.md)
+- [SamsaraApi.VehicleLocation](docs/responses/VehicleLocation.md) 
+- [SamsaraApi.TripResponse](docs/responses/TripResponse.md)
+- [SamsaraApi.Sensor](docs/responses/Sensor.md)
+- [SamsaraApi.TemperatureResponse](docs/responses/TemperatureResponse.md)
+- [SamsaraApi.HumidityResponse](docs/responses/HumidityResponse.md)
+- [SamsaraApi.SensorHistoryResponse](docs/responses/SensorHistoryResponse.md)
+- [SamsaraApi.ErrorResponse](docs/responses/ErrorResponse.md)
 
 
 ## Footnotes

@@ -123,11 +123,11 @@ apiInstance.getFleetDrivers(accessToken, groupDriversParam, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**|  | 
- **groupDriversParam** | [**GroupDriversParam**](GroupDriversParam.md)|  | 
+ **groupDriversParam** | [**GroupDriversParam**](params/GroupDriversParam.md)|  | 
 
 ### Return type
 
-[**DriversRespose**](DriversRespose.md)
+[**DriversRespose**](responses/DriversRespose.md)
 
 ### Authorization
 
@@ -170,11 +170,11 @@ apiInstance.getFleetHosLogs(accessToken, hosLogsParam, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**|  | 
- **hosLogsParam** | [**HosLogsParam**](HosLogsParam.md)|  | 
+ **hosLogsParam** | [**HosLogsParam**](params/HosLogsParam.md)|  | 
 
 ### Return type
 
-[**HosLogsResponse**](HosLogsResponse.md)
+[**HosLogsResponse**](responses/HosLogsResponse.md)
 
 ### Authorization
 
