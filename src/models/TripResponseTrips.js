@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'models/TripResponseEndCoordinates', 'models/TripResponseStartCoordinates'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./TripResponseEndCoordinates'), require('./TripResponseStartCoordinates'));
   } else {
     // Browser globals (root is window)
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.TripResponseTrips = factory(root.SamsaraApi.ApiClient);
+    root.SamsaraApi.TripResponseTrips = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.TripResponseEndCoordinates, root.SamsaraApi.TripResponseStartCoordinates);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, TripResponseEndCoordinates, TripResponseStartCoordinates) {
   'use strict';
 
 
@@ -60,6 +60,8 @@
 
 
 
+
+
   };
 
   /**
@@ -76,11 +78,17 @@
       if (data.hasOwnProperty('startMs')) {
         obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Integer');
       }
-      if (data.hasOwnProperty('endMs')) {
-        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Integer');
+      if (data.hasOwnProperty('startCoordinates')) {
+        obj['startCoordinates'] = TripResponseStartCoordinates.constructFromObject(data['startCoordinates']);
       }
       if (data.hasOwnProperty('startLocation')) {
         obj['startLocation'] = ApiClient.convertToType(data['startLocation'], 'String');
+      }
+      if (data.hasOwnProperty('endMs')) {
+        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Integer');
+      }
+      if (data.hasOwnProperty('endCoordinates')) {
+        obj['endCoordinates'] = TripResponseEndCoordinates.constructFromObject(data['endCoordinates']);
       }
       if (data.hasOwnProperty('endLocation')) {
         obj['endLocation'] = ApiClient.convertToType(data['endLocation'], 'String');
@@ -90,18 +98,30 @@
   }
 
   /**
+   * Beginning of the trip in UNIX milliseconds.
    * @member {Integer} startMs
    */
   exports.prototype['startMs'] = undefined;
   /**
-   * @member {Integer} endMs
+   * @member {module:models/TripResponseStartCoordinates} startCoordinates
    */
-  exports.prototype['endMs'] = undefined;
+  exports.prototype['startCoordinates'] = undefined;
   /**
+   * Text representation of nearest identifiable location to the start (latitude, longitude) coordinates.
    * @member {String} startLocation
    */
   exports.prototype['startLocation'] = undefined;
   /**
+   * End of the trip in UNIX milliseconds.
+   * @member {Integer} endMs
+   */
+  exports.prototype['endMs'] = undefined;
+  /**
+   * @member {module:models/TripResponseEndCoordinates} endCoordinates
+   */
+  exports.prototype['endCoordinates'] = undefined;
+  /**
+   * Text representation of nearest identifiable location to the end (latitude, longitude) coordinates.
    * @member {String} endLocation
    */
   exports.prototype['endLocation'] = undefined;

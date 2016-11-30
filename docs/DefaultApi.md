@@ -2,23 +2,27 @@
 
 All URIs are relative to *https://api.samsara.com/v1*
 
-Method | Description
-------------- | -------------
-[**addFleetAddress**](DefaultApi.md#addFleetAddress) | This method adds an address book entry to the specified group.
-[**getFleet**](DefaultApi.md#getFleet) | This method returns a list of the vehicles in the Samsara Cloud and information about them.
-[**getFleetDrivers**](DefaultApi.md#getFleetDrivers) | Get all the drivers for the specified group.
-[**getFleetHosLogs**](DefaultApi.md#getFleetHosLogs) | Get the HOS (hours of service) logs for the specified driver.
-[**getFleetLocations**](DefaultApi.md#getFleetLocations) | This method returns the current location in latitude and longitude of all vehicles in a requested group.
-[**getFleetTrips**](DefaultApi.md#getFleetTrips) | This method returns a set of historical trips data for the specified vehicle in the specified time range.
-[**getSensors**](DefaultApi.md#getSensors) | This method returns a list of the sensor objects in the Samsara Cloud and information about them.
-[**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
-[**getSensorsHumidity**](DefaultApi.md#getSensorsHumidity) | This method returns the current relative humidity for the requested sensors.
-[**getSensorsTemperature**](DefaultApi.md#getSensorsTemperature) | This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
-[**updateVehicles**](DefaultApi.md#updateVehicles) | This method enables the mutation of metadata for vehicles in the Samsara Cloud.
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**addFleetAddress**](DefaultApi.md#addFleetAddress) | **POST** /fleet/add_address | This method adds an address book entry to the specified group.
+[**createFleetDispatchJobs**](DefaultApi.md#createFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/create | Create dispatch jobs in the specified group.
+[**getFleet**](DefaultApi.md#getFleet) | **POST** /fleet/list | This method returns a list of the vehicles in the Samsara Cloud and information about them.
+[**getFleetDispatchJobs**](DefaultApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | Get the dispatch jobs for the specified group.
+[**getFleetDrivers**](DefaultApi.md#getFleetDrivers) | **POST** /fleet/drivers | Get all the drivers for the specified group.
+[**getFleetHosLogs**](DefaultApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | Get the HOS (hours of service) logs for the specified driver.
+[**getFleetLocations**](DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | This method returns the current location in latitude and longitude of all vehicles in a requested group.
+[**getFleetTrips**](DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | This method returns a set of historical trips data for the specified vehicle in the specified time range.
+[**getSensors**](DefaultApi.md#getSensors) | **POST** /sensors/list | This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+[**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+[**getSensorsHumidity**](DefaultApi.md#getSensorsHumidity) | **POST** /sensors/humidity | This method returns the current relative humidity for the requested sensors.
+[**getSensorsTemperature**](DefaultApi.md#getSensorsTemperature) | **POST** /sensors/temperature | This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+[**updateFleetDispatchJobs**](DefaultApi.md#updateFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/update | Update dispatch jobs specified group.
+[**updateVehicles**](DefaultApi.md#updateVehicles) | **POST** /fleet/set_data | This method enables the mutation of metadata for vehicles in the Samsara Cloud.
 
 
 <a name="addFleetAddress"></a>
 # **addFleetAddress**
+> addFleetAddress(accessToken, addressParam)
 
 This method adds an address book entry to the specified group.
 
@@ -45,17 +49,74 @@ apiInstance.addFleetAddress(accessToken, addressParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **addressParam** | [**AddressParam**](params/AddressParam.md)|
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **addressParam** | [**AddressParam**](AddressParam.md)|  | 
 
-### Response
+### Return type
 
 null (empty response body)
 
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="createFleetDispatchJobs"></a>
+# **createFleetDispatchJobs**
+> DispatchJobsResponse createFleetDispatchJobs(accessToken, createDispatchJobsParam)
+
+Create dispatch jobs in the specified group.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | Samsara API access token.
+
+var createDispatchJobsParam = new SamsaraApi.CreateDispatchJobsParam(); // CreateDispatchJobsParam | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createFleetDispatchJobs(accessToken, createDispatchJobsParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **createDispatchJobsParam** | [**CreateDispatchJobsParam**](CreateDispatchJobsParam.md)|  | 
+
+### Return type
+
+[**DispatchJobsResponse**](DispatchJobsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getFleet"></a>
 # **getFleet**
+> InlineResponse200 getFleet(accessToken, groupParam)
 
 This method returns a list of the vehicles in the Samsara Cloud and information about them.
 
@@ -82,14 +143,70 @@ apiInstance.getFleet(accessToken, groupParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **groupParam** | [**GroupParam**](params/GroupParam.md)| Group ID to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
 
-### Response
+### Return type
 
-[**InlineResponse200**](responses/InlineResponse200.md)
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFleetDispatchJobs"></a>
+# **getFleetDispatchJobs**
+> DispatchJobsResponse getFleetDispatchJobs(accessToken, getDispatchJobsParam)
+
+Get the dispatch jobs for the specified group.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | Samsara API access token.
+
+var getDispatchJobsParam = new SamsaraApi.GetDispatchJobsParam(); // GetDispatchJobsParam | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFleetDispatchJobs(accessToken, getDispatchJobsParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **getDispatchJobsParam** | [**GetDispatchJobsParam**](GetDispatchJobsParam.md)|  | 
+
+### Return type
+
+[**DispatchJobsResponse**](DispatchJobsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getFleetDrivers"></a>
 # **getFleetDrivers**
@@ -103,7 +220,7 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
 var groupDriversParam = new SamsaraApi.GroupDriversParam(); // GroupDriversParam | 
 
@@ -122,12 +239,12 @@ apiInstance.getFleetDrivers(accessToken, groupDriversParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **groupDriversParam** | [**GroupDriversParam**](params/GroupDriversParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupDriversParam** | [**GroupDriversParam**](GroupDriversParam.md)|  | 
 
 ### Return type
 
-[**DriversRespose**](responses/DriversRespose.md)
+[**DriversRespose**](DriversRespose.md)
 
 ### Authorization
 
@@ -135,7 +252,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getFleetHosLogs"></a>
@@ -150,7 +267,7 @@ var SamsaraApi = require('samsara_api');
 
 var apiInstance = new SamsaraApi.DefaultApi();
 
-var accessToken = "accessToken_example"; // String | 
+var accessToken = "accessToken_example"; // String | Samsara API access token.
 
 var hosLogsParam = new SamsaraApi.HosLogsParam(); // HosLogsParam | 
 
@@ -169,12 +286,12 @@ apiInstance.getFleetHosLogs(accessToken, hosLogsParam, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**|  | 
- **hosLogsParam** | [**HosLogsParam**](params/HosLogsParam.md)|  | 
+ **accessToken** | **String**| Samsara API access token. | 
+ **hosLogsParam** | [**HosLogsParam**](HosLogsParam.md)|  | 
 
 ### Return type
 
-[**HosLogsResponse**](responses/HosLogsResponse.md)
+[**HosLogsResponse**](HosLogsResponse.md)
 
 ### Authorization
 
@@ -182,11 +299,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="getFleetLocations"></a>
 # **getFleetLocations**
+> InlineResponse2001 getFleetLocations(accessToken, groupParam)
 
 This method returns the current location in latitude and longitude of all vehicles in a requested group.
 
@@ -213,17 +331,27 @@ apiInstance.getFleetLocations(accessToken, groupParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **groupParam** | [**GroupParam**](params/GroupParam.md)| Group ID to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
 
-### Response
+### Return type
 
-[**InlineResponse2001**](responses/InlineResponse2001.md)
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getFleetTrips"></a>
 # **getFleetTrips**
+> TripResponse getFleetTrips(accessToken, tripsParam)
 
 This method returns a set of historical trips data for the specified vehicle in the specified time range.
 
@@ -250,17 +378,27 @@ apiInstance.getFleetTrips(accessToken, tripsParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **tripsParam** | [**TripsParam**](params/TripsParam.md)| Group ID, vehicle ID and time range to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **tripsParam** | [**TripsParam**](TripsParam.md)| Group ID, vehicle ID and time range to query. | 
 
-### Response
+### Return type
 
-[**TripResponse**](responses/TripResponse.md)
+[**TripResponse**](TripResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getSensors"></a>
 # **getSensors**
+> InlineResponse2002 getSensors(accessToken, groupParam)
 
 This method returns a list of the sensor objects in the Samsara Cloud and information about them.
 
@@ -287,17 +425,27 @@ apiInstance.getSensors(accessToken, groupParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **groupParam** | [**GroupParam**](params/GroupParam.md)| Group ID to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
 
-### Response
+### Return type
 
-[**InlineResponse2002**](responses/InlineResponse2002.md)
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getSensorsHistory"></a>
 # **getSensorsHistory**
+> SensorHistoryResponse getSensorsHistory(accessToken, historyParam)
 
 This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
 
@@ -324,17 +472,27 @@ apiInstance.getSensorsHistory(accessToken, historyParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **historyParam** | [**HistoryParam**](params/HistoryParam.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **historyParam** | [**HistoryParam**](HistoryParam.md)| Group ID, time range and resolution, and list of sensor ID, field pairs to query. | 
 
-### Response
+### Return type
 
-[**SensorHistoryResponse**](responses/SensorHistoryResponse.md)
+[**SensorHistoryResponse**](SensorHistoryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getSensorsHumidity"></a>
 # **getSensorsHumidity**
+> HumidityResponse getSensorsHumidity(accessToken, sensorParam)
 
 This method returns the current relative humidity for the requested sensors.
 
@@ -361,17 +519,27 @@ apiInstance.getSensorsHumidity(accessToken, sensorParam, callback);
 
 ### Parameters
 
-Name | Type | Description 
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **sensorParam** | [**SensorParam**](params/SensorParam.md)| Group ID and list of sensor IDs to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **sensorParam** | [**SensorParam**](SensorParam.md)| Group ID and list of sensor IDs to query. | 
 
-### Response
+### Return type
 
-[**HumidityResponse**](responses/HumidityResponse.md)
+[**HumidityResponse**](HumidityResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getSensorsTemperature"></a>
 # **getSensorsTemperature**
+> TemperatureResponse getSensorsTemperature(accessToken, sensorParam)
 
 This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
 
@@ -398,17 +566,74 @@ apiInstance.getSensorsTemperature(accessToken, sensorParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **sensorParam** | [**SensorParam**](params/SensorParam.md)| Group ID and list of sensor IDs to query.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **sensorParam** | [**SensorParam**](SensorParam.md)| Group ID and list of sensor IDs to query. | 
 
-### Response
+### Return type
 
-[**TemperatureResponse**](responses/TemperatureResponse.md)
+[**TemperatureResponse**](TemperatureResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="updateFleetDispatchJobs"></a>
+# **updateFleetDispatchJobs**
+> DispatchJobsResponse updateFleetDispatchJobs(accessToken, updateDispatchJobsParam)
+
+Update dispatch jobs specified group.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | Samsara API access token.
+
+var updateDispatchJobsParam = new SamsaraApi.UpdateDispatchJobsParam(); // UpdateDispatchJobsParam | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateFleetDispatchJobs(accessToken, updateDispatchJobsParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **updateDispatchJobsParam** | [**UpdateDispatchJobsParam**](UpdateDispatchJobsParam.md)|  | 
+
+### Return type
+
+[**DispatchJobsResponse**](DispatchJobsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="updateVehicles"></a>
 # **updateVehicles**
+> updateVehicles(accessToken, vehicleUpdateParam)
 
 This method enables the mutation of metadata for vehicles in the Samsara Cloud.
 
@@ -435,11 +660,21 @@ apiInstance.updateVehicles(accessToken, vehicleUpdateParam, callback);
 
 ### Parameters
 
-Name | Type | Description
-------------- | ------------- | -------------
- **accessToken** | **String**| Samsara API access token.
- **vehicleUpdateParam** | [**VehicleUpdateParam**](params/VehicleUpdateParam.md)|
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **vehicleUpdateParam** | [**VehicleUpdateParam**](VehicleUpdateParam.md)|  | 
 
-### Response
+### Return type
 
 null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+

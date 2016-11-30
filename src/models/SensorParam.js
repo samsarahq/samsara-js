@@ -52,8 +52,8 @@
    * Constructs a new <code>SensorParam</code>.
    * @alias module:models/SensorParam
    * @class
-   * @param groupId {Integer} 
-   * @param sensors {Array.<Integer>} 
+   * @param groupId {Integer} Group ID to query.
+   * @param sensors {Array.<Integer>} List of sensor IDs to query.
    */
   var exports = function(groupId, sensors) {
     var _this = this;
@@ -84,10 +84,12 @@
   }
 
   /**
+   * Group ID to query.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
+   * List of sensor IDs to query.
    * @member {Array.<Integer>} sensors
    */
   exports.prototype['sensors'] = undefined;

@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/AddressParam', 'models/ErrorResponse', 'models/InlineResponse200', 'models/GroupParam', 'models/DriversRespose', 'models/GroupDriversParam', 'models/HosLogsResponse', 'models/HosLogsParam', 'models/InlineResponse2001', 'models/TripResponse', 'models/TripsParam', 'models/InlineResponse2002', 'models/HistoryParam', 'models/SensorHistoryResponse', 'models/HumidityResponse', 'models/SensorParam', 'models/TemperatureResponse', 'models/VehicleUpdateParam'], factory);
+    define(['ApiClient', 'models/AddressParam', 'models/ErrorResponse', 'models/DispatchJobsResponse', 'models/CreateDispatchJobsParam', 'models/InlineResponse200', 'models/GroupParam', 'models/GetDispatchJobsParam', 'models/DriversRespose', 'models/GroupDriversParam', 'models/HosLogsResponse', 'models/HosLogsParam', 'models/InlineResponse2001', 'models/TripResponse', 'models/TripsParam', 'models/InlineResponse2002', 'models/HistoryParam', 'models/SensorHistoryResponse', 'models/HumidityResponse', 'models/SensorParam', 'models/TemperatureResponse', 'models/UpdateDispatchJobsParam', 'models/VehicleUpdateParam'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../models/AddressParam'), require('../models/ErrorResponse'), require('../models/InlineResponse200'), require('../models/GroupParam'), require('../models/DriversRespose'), require('../models/GroupDriversParam'), require('../models/HosLogsResponse'), require('../models/HosLogsParam'), require('../models/InlineResponse2001'), require('../models/TripResponse'), require('../models/TripsParam'), require('../models/InlineResponse2002'), require('../models/HistoryParam'), require('../models/SensorHistoryResponse'), require('../models/HumidityResponse'), require('../models/SensorParam'), require('../models/TemperatureResponse'), require('../models/VehicleUpdateParam'));
+    module.exports = factory(require('../ApiClient'), require('../models/AddressParam'), require('../models/ErrorResponse'), require('../models/DispatchJobsResponse'), require('../models/CreateDispatchJobsParam'), require('../models/InlineResponse200'), require('../models/GroupParam'), require('../models/GetDispatchJobsParam'), require('../models/DriversRespose'), require('../models/GroupDriversParam'), require('../models/HosLogsResponse'), require('../models/HosLogsParam'), require('../models/InlineResponse2001'), require('../models/TripResponse'), require('../models/TripsParam'), require('../models/InlineResponse2002'), require('../models/HistoryParam'), require('../models/SensorHistoryResponse'), require('../models/HumidityResponse'), require('../models/SensorParam'), require('../models/TemperatureResponse'), require('../models/UpdateDispatchJobsParam'), require('../models/VehicleUpdateParam'));
   } else {
     // Browser globals (root is window)
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.DefaultApi = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.AddressParam, root.SamsaraApi.ErrorResponse, root.SamsaraApi.InlineResponse200, root.SamsaraApi.GroupParam, root.SamsaraApi.DriversRespose, root.SamsaraApi.GroupDriversParam, root.SamsaraApi.HosLogsResponse, root.SamsaraApi.HosLogsParam, root.SamsaraApi.InlineResponse2001, root.SamsaraApi.TripResponse, root.SamsaraApi.TripsParam, root.SamsaraApi.InlineResponse2002, root.SamsaraApi.HistoryParam, root.SamsaraApi.SensorHistoryResponse, root.SamsaraApi.HumidityResponse, root.SamsaraApi.SensorParam, root.SamsaraApi.TemperatureResponse, root.SamsaraApi.VehicleUpdateParam);
+    root.SamsaraApi.DefaultApi = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.AddressParam, root.SamsaraApi.ErrorResponse, root.SamsaraApi.DispatchJobsResponse, root.SamsaraApi.CreateDispatchJobsParam, root.SamsaraApi.InlineResponse200, root.SamsaraApi.GroupParam, root.SamsaraApi.GetDispatchJobsParam, root.SamsaraApi.DriversRespose, root.SamsaraApi.GroupDriversParam, root.SamsaraApi.HosLogsResponse, root.SamsaraApi.HosLogsParam, root.SamsaraApi.InlineResponse2001, root.SamsaraApi.TripResponse, root.SamsaraApi.TripsParam, root.SamsaraApi.InlineResponse2002, root.SamsaraApi.HistoryParam, root.SamsaraApi.SensorHistoryResponse, root.SamsaraApi.HumidityResponse, root.SamsaraApi.SensorParam, root.SamsaraApi.TemperatureResponse, root.SamsaraApi.UpdateDispatchJobsParam, root.SamsaraApi.VehicleUpdateParam);
   }
-}(this, function(ApiClient, AddressParam, ErrorResponse, InlineResponse200, GroupParam, DriversRespose, GroupDriversParam, HosLogsResponse, HosLogsParam, InlineResponse2001, TripResponse, TripsParam, InlineResponse2002, HistoryParam, SensorHistoryResponse, HumidityResponse, SensorParam, TemperatureResponse, VehicleUpdateParam) {
+}(this, function(ApiClient, AddressParam, ErrorResponse, DispatchJobsResponse, CreateDispatchJobsParam, InlineResponse200, GroupParam, GetDispatchJobsParam, DriversRespose, GroupDriversParam, HosLogsResponse, HosLogsParam, InlineResponse2001, TripResponse, TripsParam, InlineResponse2002, HistoryParam, SensorHistoryResponse, HumidityResponse, SensorParam, TemperatureResponse, UpdateDispatchJobsParam, VehicleUpdateParam) {
   'use strict';
 
   /**
@@ -65,8 +65,8 @@
      */
 
     /**
-     * Add an address book entry for the group.
-     * @param {String} accessToken 
+     * This method adds an address book entry to the specified group.
+     * @param {String} accessToken Samsara API access token.
      * @param {module:models/AddressParam} addressParam 
      * @param {module:client/DefaultApi~addFleetAddressCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -95,12 +95,63 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
 
       return this.apiClient.callApi(
         '/fleet/add_address', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createFleetDispatchJobs operation.
+     * @callback module:client/DefaultApi~createFleetDispatchJobsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:models/DispatchJobsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create dispatch jobs in the specified group.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/CreateDispatchJobsParam} createDispatchJobsParam 
+     * @param {module:client/DefaultApi~createFleetDispatchJobsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:models/DispatchJobsResponse}
+     */
+    this.createFleetDispatchJobs = function(accessToken, createDispatchJobsParam, callback) {
+      var postBody = createDispatchJobsParam;
+
+      // verify the required parameter 'accessToken' is set
+      if (accessToken == undefined || accessToken == null) {
+        throw "Missing the required parameter 'accessToken' when calling createFleetDispatchJobs";
+      }
+
+      // verify the required parameter 'createDispatchJobsParam' is set
+      if (createDispatchJobsParam == undefined || createDispatchJobsParam == null) {
+        throw "Missing the required parameter 'createDispatchJobsParam' when calling createFleetDispatchJobs";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'access_token': accessToken
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DispatchJobsResponse;
+
+      return this.apiClient.callApi(
+        '/fleet/dispatch_jobs/create', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -115,9 +166,9 @@
      */
 
     /**
-     * Get the vehicles for the group.
-     * @param {String} accessToken 
-     * @param {module:models/GroupParam} groupParam 
+     * This method returns a list of the vehicles in the Samsara Cloud and information about them.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getFleetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/InlineResponse200}
      */
@@ -146,12 +197,63 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = InlineResponse200;
 
       return this.apiClient.callApi(
         '/fleet/list', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getFleetDispatchJobs operation.
+     * @callback module:client/DefaultApi~getFleetDispatchJobsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:models/DispatchJobsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the dispatch jobs for the specified group.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GetDispatchJobsParam} getDispatchJobsParam 
+     * @param {module:client/DefaultApi~getFleetDispatchJobsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:models/DispatchJobsResponse}
+     */
+    this.getFleetDispatchJobs = function(accessToken, getDispatchJobsParam, callback) {
+      var postBody = getDispatchJobsParam;
+
+      // verify the required parameter 'accessToken' is set
+      if (accessToken == undefined || accessToken == null) {
+        throw "Missing the required parameter 'accessToken' when calling getFleetDispatchJobs";
+      }
+
+      // verify the required parameter 'getDispatchJobsParam' is set
+      if (getDispatchJobsParam == undefined || getDispatchJobsParam == null) {
+        throw "Missing the required parameter 'getDispatchJobsParam' when calling getFleetDispatchJobs";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'access_token': accessToken
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DispatchJobsResponse;
+
+      return this.apiClient.callApi(
+        '/fleet/dispatch_jobs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -167,7 +269,7 @@
 
     /**
      * Get all the drivers for the specified group.
-     * @param {String} accessToken 
+     * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupDriversParam} groupDriversParam 
      * @param {module:client/DefaultApi~getFleetDriversCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/DriversRespose}
@@ -197,7 +299,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = DriversRespose;
 
@@ -218,7 +320,7 @@
 
     /**
      * Get the HOS (hours of service) logs for the specified driver.
-     * @param {String} accessToken 
+     * @param {String} accessToken Samsara API access token.
      * @param {module:models/HosLogsParam} hosLogsParam 
      * @param {module:client/DefaultApi~getFleetHosLogsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/HosLogsResponse}
@@ -248,7 +350,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = HosLogsResponse;
 
@@ -268,9 +370,9 @@
      */
 
     /**
-     * Get the GPS locations for all vehicles in the group.
-     * @param {String} accessToken 
-     * @param {module:models/GroupParam} groupParam 
+     * This method returns the current location in latitude and longitude of all vehicles in a requested group.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getFleetLocationsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/InlineResponse2001}
      */
@@ -299,7 +401,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = InlineResponse2001;
 
@@ -319,9 +421,9 @@
      */
 
     /**
-     * Get the trips for the specified vehicle.
-     * @param {String} accessToken 
-     * @param {module:models/TripsParam} tripsParam 
+     * This method returns a set of historical trips data for the specified vehicle in the specified time range.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/TripsParam} tripsParam Group ID, vehicle ID and time range to query.
      * @param {module:client/DefaultApi~getFleetTripsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/TripResponse}
      */
@@ -350,7 +452,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TripResponse;
 
@@ -370,9 +472,9 @@
      */
 
     /**
-     * Get the sensors for a group.
-     * @param {String} accessToken 
-     * @param {module:models/GroupParam} groupParam 
+     * This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getSensorsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/InlineResponse2002}
      */
@@ -401,7 +503,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = InlineResponse2002;
 
@@ -421,9 +523,9 @@
      */
 
     /**
-     * Get the historical data for the sensors.
-     * @param {String} accessToken 
-     * @param {module:models/HistoryParam} historyParam 
+     * This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/HistoryParam} historyParam Group ID, time range and resolution, and list of sensor ID, field pairs to query.
      * @param {module:client/DefaultApi~getSensorsHistoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/SensorHistoryResponse}
      */
@@ -452,7 +554,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = SensorHistoryResponse;
 
@@ -472,9 +574,9 @@
      */
 
     /**
-     * Get the current humidity readings for the specified sensors.
-     * @param {String} accessToken 
-     * @param {module:models/SensorParam} sensorParam 
+     * This method returns the current relative humidity for the requested sensors.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/DefaultApi~getSensorsHumidityCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/HumidityResponse}
      */
@@ -503,7 +605,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = HumidityResponse;
 
@@ -523,9 +625,9 @@
      */
 
     /**
-     * Get the current temperature readings for the specified sensors.
-     * @param {String} accessToken 
-     * @param {module:models/SensorParam} sensorParam 
+     * This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/DefaultApi~getSensorsTemperatureCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {module:models/TemperatureResponse}
      */
@@ -554,12 +656,63 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = TemperatureResponse;
 
       return this.apiClient.callApi(
         '/sensors/temperature', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updateFleetDispatchJobs operation.
+     * @callback module:client/DefaultApi~updateFleetDispatchJobsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:models/DispatchJobsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update dispatch jobs specified group.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/UpdateDispatchJobsParam} updateDispatchJobsParam 
+     * @param {module:client/DefaultApi~updateFleetDispatchJobsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {module:models/DispatchJobsResponse}
+     */
+    this.updateFleetDispatchJobs = function(accessToken, updateDispatchJobsParam, callback) {
+      var postBody = updateDispatchJobsParam;
+
+      // verify the required parameter 'accessToken' is set
+      if (accessToken == undefined || accessToken == null) {
+        throw "Missing the required parameter 'accessToken' when calling updateFleetDispatchJobs";
+      }
+
+      // verify the required parameter 'updateDispatchJobsParam' is set
+      if (updateDispatchJobsParam == undefined || updateDispatchJobsParam == null) {
+        throw "Missing the required parameter 'updateDispatchJobsParam' when calling updateFleetDispatchJobs";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'access_token': accessToken
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DispatchJobsResponse;
+
+      return this.apiClient.callApi(
+        '/fleet/dispatch_jobs/update', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -574,8 +727,8 @@
      */
 
     /**
-     * Update the metadata for a vehicle.
-     * @param {String} accessToken 
+     * This method enables the mutation of metadata for vehicles in the Samsara Cloud.
+     * @param {String} accessToken Samsara API access token.
      * @param {module:models/VehicleUpdateParam} vehicleUpdateParam 
      * @param {module:client/DefaultApi~updateVehiclesCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -604,7 +757,7 @@
       };
 
       var authNames = [];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
 

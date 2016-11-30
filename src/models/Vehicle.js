@@ -50,9 +50,10 @@
 
   /**
    * Constructs a new <code>Vehicle</code>.
+   * A vehicle object.
    * @alias module:models/Vehicle
    * @class
-   * @param id {Integer} 
+   * @param id {Integer} ID of the vehicle.
    */
   var exports = function(id) {
     var _this = this;
@@ -87,10 +88,12 @@
   }
 
   /**
+   * ID of the vehicle.
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
+   * Name of the vehicle.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;

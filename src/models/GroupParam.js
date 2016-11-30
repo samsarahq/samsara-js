@@ -52,7 +52,7 @@
    * Constructs a new <code>GroupParam</code>.
    * @alias module:models/GroupParam
    * @class
-   * @param groupId {Integer} 
+   * @param groupId {Integer} Group ID to query.
    */
   var exports = function(groupId) {
     var _this = this;
@@ -79,6 +79,7 @@
   }
 
   /**
+   * Group ID to query.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;

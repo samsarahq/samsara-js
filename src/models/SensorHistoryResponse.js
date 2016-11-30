@@ -50,6 +50,7 @@
 
   /**
    * Constructs a new <code>SensorHistoryResponse</code>.
+   * Contains the results for a sensor history request. Each result contains a timestamp and datapoint for each requested (sensor, field) pair.
    * @alias module:models/SensorHistoryResponse
    * @class
    */

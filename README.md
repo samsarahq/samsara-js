@@ -46,41 +46,67 @@ Certain API calls require this value.
 
 * Check out the examples in the `examples/` directory to see how to use the Javascript client.
 
-## API Endpoints
+## Documentation for API Endpoints
 
 All URIs are relative to *https://api.samsara.com/v1*
 
-Method | Description
------------- | -------------
-[**getFleet**](docs/DefaultApi.md#getFleet) | Get the vehicles for the group.
-[**getFleetLocations**](docs/DefaultApi.md#getFleetLocations) | Get the GPS locations for all vehicles in the group.
-[**getFleetTrips**](docs/DefaultApi.md#getFleetTrips) | Get the trips for the specified vehicle.
-[**addFleetAddress**](docs/DefaultApi.md#addFleetAddress) | Add an address book entry for the group.
-[**updateVehicles**](docs/DefaultApi.md#updateVehicles) | Update the metadata for a vehicle.
-[**getSensors**](docs/DefaultApi.md#getSensors) | Get the sensors for a group.
-[**getSensorsTemperature**](docs/DefaultApi.md#getSensorsTemperature) | Get the current temperature readings for the specified sensors.
-[**getSensorsHumidity**](docs/DefaultApi.md#getSensorsHumidity) | Get the current humidity readings for the specified sensors.
-[**getSensorsHistory**](docs/DefaultApi.md#getSensorsHistory) | Get the historical data for the sensors.
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*SamsaraApi.DefaultApi* | [**addFleetAddress**](docs/DefaultApi.md#addFleetAddress) | **POST** /fleet/add_address | This method adds an address book entry to the specified group.
+*SamsaraApi.DefaultApi* | [**createFleetDispatchJobs**](docs/DefaultApi.md#createFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/create | Create dispatch jobs in the specified group.
+*SamsaraApi.DefaultApi* | [**getFleet**](docs/DefaultApi.md#getFleet) | **POST** /fleet/list | This method returns a list of the vehicles in the Samsara Cloud and information about them.
+*SamsaraApi.DefaultApi* | [**getFleetDispatchJobs**](docs/DefaultApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | Get the dispatch jobs for the specified group.
+*SamsaraApi.DefaultApi* | [**getFleetDrivers**](docs/DefaultApi.md#getFleetDrivers) | **POST** /fleet/drivers | Get all the drivers for the specified group.
+*SamsaraApi.DefaultApi* | [**getFleetHosLogs**](docs/DefaultApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | Get the HOS (hours of service) logs for the specified driver.
+*SamsaraApi.DefaultApi* | [**getFleetLocations**](docs/DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | This method returns the current location in latitude and longitude of all vehicles in a requested group.
+*SamsaraApi.DefaultApi* | [**getFleetTrips**](docs/DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | This method returns a set of historical trips data for the specified vehicle in the specified time range.
+*SamsaraApi.DefaultApi* | [**getSensors**](docs/DefaultApi.md#getSensors) | **POST** /sensors/list | This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+*SamsaraApi.DefaultApi* | [**getSensorsHistory**](docs/DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+*SamsaraApi.DefaultApi* | [**getSensorsHumidity**](docs/DefaultApi.md#getSensorsHumidity) | **POST** /sensors/humidity | This method returns the current relative humidity for the requested sensors.
+*SamsaraApi.DefaultApi* | [**getSensorsTemperature**](docs/DefaultApi.md#getSensorsTemperature) | **POST** /sensors/temperature | This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+*SamsaraApi.DefaultApi* | [**updateFleetDispatchJobs**](docs/DefaultApi.md#updateFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/update | Update dispatch jobs specified group.
+*SamsaraApi.DefaultApi* | [**updateVehicles**](docs/DefaultApi.md#updateVehicles) | **POST** /fleet/set_data | This method enables the mutation of metadata for vehicles in the Samsara Cloud.
 
-## Request Parameters
 
-- [SamsaraApi.GroupParam](docs/params/GroupParam.md)
-- [SamsaraApi.TripsParam](docs/params/TripsParam.md) 
-- [SamsaraApi.AddressParam](docs/params/AddressParam.md)
-- [SamsaraApi.VehicleUpdateParam](docs/params/VehicleUpdateParam.md)
-- [SamsaraApi.HistoryParam](docs/params/HistoryParam.md)
+## Documentation for Models
 
-## Responses
-
-- [SamsaraApi.Vehicle](docs/responses/Vehicle.md)
-- [SamsaraApi.VehicleLocation](docs/responses/VehicleLocation.md) 
-- [SamsaraApi.TripResponse](docs/responses/TripResponse.md)
-- [SamsaraApi.Sensor](docs/responses/Sensor.md)
-- [SamsaraApi.TemperatureResponse](docs/responses/TemperatureResponse.md)
-- [SamsaraApi.HumidityResponse](docs/responses/HumidityResponse.md)
-- [SamsaraApi.SensorHistoryResponse](docs/responses/SensorHistoryResponse.md)
-- [SamsaraApi.ErrorResponse](docs/responses/ErrorResponse.md)
-
+ - [SamsaraApi.AddressParam](docs/AddressParam.md)
+ - [SamsaraApi.CreateDispatchJobsParam](docs/CreateDispatchJobsParam.md)
+ - [SamsaraApi.DispatchJobsResponse](docs/DispatchJobsResponse.md)
+ - [SamsaraApi.DispatchJobsResponseDispatchJobs](docs/DispatchJobsResponseDispatchJobs.md)
+ - [SamsaraApi.DriversRespose](docs/DriversRespose.md)
+ - [SamsaraApi.DriversResposeDrivers](docs/DriversResposeDrivers.md)
+ - [SamsaraApi.ErrorResponse](docs/ErrorResponse.md)
+ - [SamsaraApi.FleetdispatchJobscreateDispatchJobs](docs/FleetdispatchJobscreateDispatchJobs.md)
+ - [SamsaraApi.FleetdispatchJobsupdateDispatchJobs](docs/FleetdispatchJobsupdateDispatchJobs.md)
+ - [SamsaraApi.GetDispatchJobsParam](docs/GetDispatchJobsParam.md)
+ - [SamsaraApi.GroupDriversParam](docs/GroupDriversParam.md)
+ - [SamsaraApi.GroupParam](docs/GroupParam.md)
+ - [SamsaraApi.HistoryParam](docs/HistoryParam.md)
+ - [SamsaraApi.HosLogsParam](docs/HosLogsParam.md)
+ - [SamsaraApi.HosLogsResponse](docs/HosLogsResponse.md)
+ - [SamsaraApi.HosLogsResponseLogs](docs/HosLogsResponseLogs.md)
+ - [SamsaraApi.HumidityResponse](docs/HumidityResponse.md)
+ - [SamsaraApi.HumidityResponseSensors](docs/HumidityResponseSensors.md)
+ - [SamsaraApi.InlineResponse200](docs/InlineResponse200.md)
+ - [SamsaraApi.InlineResponse2001](docs/InlineResponse2001.md)
+ - [SamsaraApi.InlineResponse2002](docs/InlineResponse2002.md)
+ - [SamsaraApi.Sensor](docs/Sensor.md)
+ - [SamsaraApi.SensorHistoryResponse](docs/SensorHistoryResponse.md)
+ - [SamsaraApi.SensorHistoryResponseResults](docs/SensorHistoryResponseResults.md)
+ - [SamsaraApi.SensorParam](docs/SensorParam.md)
+ - [SamsaraApi.SensorshistorySeries](docs/SensorshistorySeries.md)
+ - [SamsaraApi.TemperatureResponse](docs/TemperatureResponse.md)
+ - [SamsaraApi.TemperatureResponseSensors](docs/TemperatureResponseSensors.md)
+ - [SamsaraApi.TripResponse](docs/TripResponse.md)
+ - [SamsaraApi.TripResponseEndCoordinates](docs/TripResponseEndCoordinates.md)
+ - [SamsaraApi.TripResponseStartCoordinates](docs/TripResponseStartCoordinates.md)
+ - [SamsaraApi.TripResponseTrips](docs/TripResponseTrips.md)
+ - [SamsaraApi.TripsParam](docs/TripsParam.md)
+ - [SamsaraApi.UpdateDispatchJobsParam](docs/UpdateDispatchJobsParam.md)
+ - [SamsaraApi.Vehicle](docs/Vehicle.md)
+ - [SamsaraApi.VehicleLocation](docs/VehicleLocation.md)
+ - [SamsaraApi.VehicleUpdateParam](docs/VehicleUpdateParam.md)
 
 ## Footnotes
 

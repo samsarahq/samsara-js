@@ -50,14 +50,16 @@
 
   /**
    * Constructs a new <code>VehicleLocation</code>.
+   * Contains the location, in latitude and longitude, of a vehicle.
    * @alias module:models/VehicleLocation
    * @class
-   * @param id {Integer} 
+   * @param id {Integer} ID of the vehicle.
    */
   var exports = function(id) {
     var _this = this;
 
     _this['id'] = id;
+
 
 
 
@@ -82,10 +84,13 @@
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('latitude')) {
-        obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Integer');
+        obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Number');
       }
       if (data.hasOwnProperty('longitude')) {
-        obj['longitude'] = ApiClient.convertToType(data['longitude'], 'Integer');
+        obj['longitude'] = ApiClient.convertToType(data['longitude'], 'Number');
+      }
+      if (data.hasOwnProperty('location')) {
+        obj['location'] = ApiClient.convertToType(data['location'], 'String');
       }
       if (data.hasOwnProperty('time')) {
         obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
@@ -95,22 +100,32 @@
   }
 
   /**
+   * ID of the vehicle.
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
+   * Name of the vehicle.
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {Integer} latitude
+   * Latitude in decimal degrees.
+   * @member {Number} latitude
    */
   exports.prototype['latitude'] = undefined;
   /**
-   * @member {Integer} longitude
+   * Longitude in decimal degrees.
+   * @member {Number} longitude
    */
   exports.prototype['longitude'] = undefined;
   /**
+   * Text representation of nearest identifiable location to (latitude, longitude) coordinates.
+   * @member {String} location
+   */
+  exports.prototype['location'] = undefined;
+  /**
+   * The time the reported location was logged, reported as a UNIX timestamp in milliseconds.
    * @member {Integer} time
    */
   exports.prototype['time'] = undefined;

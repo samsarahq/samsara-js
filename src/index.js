@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/AddressParam', 'models/DriversRespose', 'models/DriversResposeDrivers', 'models/ErrorResponse', 'models/GroupDriversParam', 'models/GroupParam', 'models/HistoryParam', 'models/HosLogsParam', 'models/HosLogsResponse', 'models/HosLogsResponseLogs', 'models/HumidityResponse', 'models/HumidityResponseSensors', 'models/InlineResponse200', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/Sensor', 'models/SensorHistoryResponse', 'models/SensorHistoryResponseResults', 'models/SensorParam', 'models/SensorshistorySeries', 'models/TemperatureResponse', 'models/TemperatureResponseSensors', 'models/TripResponse', 'models/TripResponseTrips', 'models/TripsParam', 'models/Vehicle', 'models/VehicleLocation', 'models/VehicleUpdateParam', 'client/DefaultApi'], factory);
+    define(['ApiClient', 'models/AddressParam', 'models/CreateDispatchJobsParam', 'models/DispatchJobsResponse', 'models/DispatchJobsResponseDispatchJobs', 'models/DriversRespose', 'models/DriversResposeDrivers', 'models/ErrorResponse', 'models/FleetdispatchJobscreateDispatchJobs', 'models/FleetdispatchJobsupdateDispatchJobs', 'models/GetDispatchJobsParam', 'models/GroupDriversParam', 'models/GroupParam', 'models/HistoryParam', 'models/HosLogsParam', 'models/HosLogsResponse', 'models/HosLogsResponseLogs', 'models/HumidityResponse', 'models/HumidityResponseSensors', 'models/InlineResponse200', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/Sensor', 'models/SensorHistoryResponse', 'models/SensorHistoryResponseResults', 'models/SensorParam', 'models/SensorshistorySeries', 'models/TemperatureResponse', 'models/TemperatureResponseSensors', 'models/TripResponse', 'models/TripResponseEndCoordinates', 'models/TripResponseStartCoordinates', 'models/TripResponseTrips', 'models/TripsParam', 'models/UpdateDispatchJobsParam', 'models/Vehicle', 'models/VehicleLocation', 'models/VehicleUpdateParam', 'client/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./models/AddressParam'), require('./models/DriversRespose'), require('./models/DriversResposeDrivers'), require('./models/ErrorResponse'), require('./models/GroupDriversParam'), require('./models/GroupParam'), require('./models/HistoryParam'), require('./models/HosLogsParam'), require('./models/HosLogsResponse'), require('./models/HosLogsResponseLogs'), require('./models/HumidityResponse'), require('./models/HumidityResponseSensors'), require('./models/InlineResponse200'), require('./models/InlineResponse2001'), require('./models/InlineResponse2002'), require('./models/Sensor'), require('./models/SensorHistoryResponse'), require('./models/SensorHistoryResponseResults'), require('./models/SensorParam'), require('./models/SensorshistorySeries'), require('./models/TemperatureResponse'), require('./models/TemperatureResponseSensors'), require('./models/TripResponse'), require('./models/TripResponseTrips'), require('./models/TripsParam'), require('./models/Vehicle'), require('./models/VehicleLocation'), require('./models/VehicleUpdateParam'), require('./client/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./models/AddressParam'), require('./models/CreateDispatchJobsParam'), require('./models/DispatchJobsResponse'), require('./models/DispatchJobsResponseDispatchJobs'), require('./models/DriversRespose'), require('./models/DriversResposeDrivers'), require('./models/ErrorResponse'), require('./models/FleetdispatchJobscreateDispatchJobs'), require('./models/FleetdispatchJobsupdateDispatchJobs'), require('./models/GetDispatchJobsParam'), require('./models/GroupDriversParam'), require('./models/GroupParam'), require('./models/HistoryParam'), require('./models/HosLogsParam'), require('./models/HosLogsResponse'), require('./models/HosLogsResponseLogs'), require('./models/HumidityResponse'), require('./models/HumidityResponseSensors'), require('./models/InlineResponse200'), require('./models/InlineResponse2001'), require('./models/InlineResponse2002'), require('./models/Sensor'), require('./models/SensorHistoryResponse'), require('./models/SensorHistoryResponseResults'), require('./models/SensorParam'), require('./models/SensorshistorySeries'), require('./models/TemperatureResponse'), require('./models/TemperatureResponseSensors'), require('./models/TripResponse'), require('./models/TripResponseEndCoordinates'), require('./models/TripResponseStartCoordinates'), require('./models/TripResponseTrips'), require('./models/TripsParam'), require('./models/UpdateDispatchJobsParam'), require('./models/Vehicle'), require('./models/VehicleLocation'), require('./models/VehicleUpdateParam'), require('./client/DefaultApi'));
   }
-}(function(ApiClient, AddressParam, DriversRespose, DriversResposeDrivers, ErrorResponse, GroupDriversParam, GroupParam, HistoryParam, HosLogsParam, HosLogsResponse, HosLogsResponseLogs, HumidityResponse, HumidityResponseSensors, InlineResponse200, InlineResponse2001, InlineResponse2002, Sensor, SensorHistoryResponse, SensorHistoryResponseResults, SensorParam, SensorshistorySeries, TemperatureResponse, TemperatureResponseSensors, TripResponse, TripResponseTrips, TripsParam, Vehicle, VehicleLocation, VehicleUpdateParam, DefaultApi) {
+}(function(ApiClient, AddressParam, CreateDispatchJobsParam, DispatchJobsResponse, DispatchJobsResponseDispatchJobs, DriversRespose, DriversResposeDrivers, ErrorResponse, FleetdispatchJobscreateDispatchJobs, FleetdispatchJobsupdateDispatchJobs, GetDispatchJobsParam, GroupDriversParam, GroupParam, HistoryParam, HosLogsParam, HosLogsResponse, HosLogsResponseLogs, HumidityResponse, HumidityResponseSensors, InlineResponse200, InlineResponse2001, InlineResponse2002, Sensor, SensorHistoryResponse, SensorHistoryResponseResults, SensorParam, SensorshistorySeries, TemperatureResponse, TemperatureResponseSensors, TripResponse, TripResponseEndCoordinates, TripResponseStartCoordinates, TripResponseTrips, TripsParam, UpdateDispatchJobsParam, Vehicle, VehicleLocation, VehicleUpdateParam, DefaultApi) {
   'use strict';
 
   /**
@@ -76,6 +76,21 @@
      */
     AddressParam: AddressParam,
     /**
+     * The CreateDispatchJobsParam model constructor.
+     * @property {module:models/CreateDispatchJobsParam}
+     */
+    CreateDispatchJobsParam: CreateDispatchJobsParam,
+    /**
+     * The DispatchJobsResponse model constructor.
+     * @property {module:models/DispatchJobsResponse}
+     */
+    DispatchJobsResponse: DispatchJobsResponse,
+    /**
+     * The DispatchJobsResponseDispatchJobs model constructor.
+     * @property {module:models/DispatchJobsResponseDispatchJobs}
+     */
+    DispatchJobsResponseDispatchJobs: DispatchJobsResponseDispatchJobs,
+    /**
      * The DriversRespose model constructor.
      * @property {module:models/DriversRespose}
      */
@@ -90,6 +105,21 @@
      * @property {module:models/ErrorResponse}
      */
     ErrorResponse: ErrorResponse,
+    /**
+     * The FleetdispatchJobscreateDispatchJobs model constructor.
+     * @property {module:models/FleetdispatchJobscreateDispatchJobs}
+     */
+    FleetdispatchJobscreateDispatchJobs: FleetdispatchJobscreateDispatchJobs,
+    /**
+     * The FleetdispatchJobsupdateDispatchJobs model constructor.
+     * @property {module:models/FleetdispatchJobsupdateDispatchJobs}
+     */
+    FleetdispatchJobsupdateDispatchJobs: FleetdispatchJobsupdateDispatchJobs,
+    /**
+     * The GetDispatchJobsParam model constructor.
+     * @property {module:models/GetDispatchJobsParam}
+     */
+    GetDispatchJobsParam: GetDispatchJobsParam,
     /**
      * The GroupDriversParam model constructor.
      * @property {module:models/GroupDriversParam}
@@ -186,6 +216,16 @@
      */
     TripResponse: TripResponse,
     /**
+     * The TripResponseEndCoordinates model constructor.
+     * @property {module:models/TripResponseEndCoordinates}
+     */
+    TripResponseEndCoordinates: TripResponseEndCoordinates,
+    /**
+     * The TripResponseStartCoordinates model constructor.
+     * @property {module:models/TripResponseStartCoordinates}
+     */
+    TripResponseStartCoordinates: TripResponseStartCoordinates,
+    /**
      * The TripResponseTrips model constructor.
      * @property {module:models/TripResponseTrips}
      */
@@ -195,6 +235,11 @@
      * @property {module:models/TripsParam}
      */
     TripsParam: TripsParam,
+    /**
+     * The UpdateDispatchJobsParam model constructor.
+     * @property {module:models/UpdateDispatchJobsParam}
+     */
+    UpdateDispatchJobsParam: UpdateDispatchJobsParam,
     /**
      * The Vehicle model constructor.
      * @property {module:models/Vehicle}

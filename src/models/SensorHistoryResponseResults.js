@@ -82,10 +82,12 @@
   }
 
   /**
+   * Timestamp in UNIX milliseconds.
    * @member {Integer} timeMs
    */
   exports.prototype['timeMs'] = undefined;
   /**
+   * List of datapoints, one for each requested (sensor, field) pair.
    * @member {Array.<Integer>} series
    */
   exports.prototype['series'] = undefined;

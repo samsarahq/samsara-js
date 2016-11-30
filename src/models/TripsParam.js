@@ -52,10 +52,10 @@
    * Constructs a new <code>TripsParam</code>.
    * @alias module:models/TripsParam
    * @class
-   * @param groupId {Integer} 
-   * @param vehicleId {Integer} 
-   * @param startMs {Integer} 
-   * @param endMs {Integer} 
+   * @param groupId {Integer} Group ID to query.
+   * @param vehicleId {Integer} Vehicle ID to query.
+   * @param startMs {Integer} Beginning of the time range, specified in milliseconds UNIX time.
+   * @param endMs {Integer} End of the time range, specified in milliseconds UNIX time.
    */
   var exports = function(groupId, vehicleId, startMs, endMs) {
     var _this = this;
@@ -94,18 +94,22 @@
   }
 
   /**
+   * Group ID to query.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
+   * Vehicle ID to query.
    * @member {Integer} vehicleId
    */
   exports.prototype['vehicleId'] = undefined;
   /**
+   * Beginning of the time range, specified in milliseconds UNIX time.
    * @member {Integer} startMs
    */
   exports.prototype['startMs'] = undefined;
   /**
+   * End of the time range, specified in milliseconds UNIX time.
    * @member {Integer} endMs
    */
   exports.prototype['endMs'] = undefined;
