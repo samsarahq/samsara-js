@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** |  | [optional] 
-**name** | **String** |  | [optional] 
+**id** | **Integer** | ID of the driver. | [optional] 
+**name** | **String** | Name of the driver. | [optional] 
 
 

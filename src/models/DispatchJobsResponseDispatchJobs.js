@@ -1,6 +1,6 @@
 /**
  * Samsara API
- * 
+ * # Introduction The Samsara REST API lets you interact with the Samsara Cloud from anything that can send an HTTP request. With the Samsara API you can build powerful applications and custom solutions with sensor data.  Samsara has endpoints available to track and analyze sensors, vehicles, and entire fleets. If you’re familiar with what you can build with a REST API, the following API reference guide will be your go-to resource.  API access to the Samsara cloud is available to all Samsara administrators. If you’d like to try the API, [contact us](https://www.samsara.com/free-trial). The API is currently in beta and may be subject to frequent changes.  # Connecting to the API There are two ways to connect to the API. If you prefer to use the API in Javascript or Python, we supply SDKs which you can download here: [Javascript SDK](https://github.com/samsarahq/samsara-js), [Python SDK](https://github.com/samsarahq/samsara-python).  If you’d rather use another language to interact with the Samsara API, the endpoints and examples are in the reference guide below.  
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -142,10 +142,12 @@
   }
 
   /**
+   * ID of the Samsara dispatch job to be updated.
    * @member {Integer} id
    */
   exports.prototype['id'] = undefined;
   /**
+   * New= string that can be used to map jobs in the Samsara database to jobs in an external database.
    * @member {String} external_identifier
    */
   exports.prototype['external_identifier'] = undefined;
@@ -158,54 +160,67 @@
    */
   exports.prototype['group_id'] = undefined;
   /**
+   * ID of the driver assigned to the dispatch job.
    * @member {Integer} driver_id
    */
   exports.prototype['driver_id'] = undefined;
   /**
+   * ID of the vehicle used for the dispatch job.
    * @member {Integer} vehicle_id
    */
   exports.prototype['vehicle_id'] = undefined;
   /**
+   * The current state of the dispatch job.
    * @member {module:models/DispatchJobsResponseDispatchJobs.JobStateEnum} job_state
    */
   exports.prototype['job_state'] = undefined;
   /**
+   * The time at which the assigned driver is scheduled to arrive at the job destination.
    * @member {Integer} scheduled_arrival_time_ms
    */
   exports.prototype['scheduled_arrival_time_ms'] = undefined;
   /**
+   * The time at which the assigned driver started fulfilling the job (e.g. started driving to the destination).
    * @member {Integer} started_at_ms
    */
   exports.prototype['started_at_ms'] = undefined;
   /**
+   * The time at which the job was marked complete.
    * @member {Integer} completed_at_ms
    */
   exports.prototype['completed_at_ms'] = undefined;
   /**
+   * The time at which the job was marked cancelled.
    * @member {Integer} cancelled_at_ms
    */
   exports.prototype['cancelled_at_ms'] = undefined;
   /**
+   * The time at which the job was created.
    * @member {Integer} job_created_at_ms
    */
   exports.prototype['job_created_at_ms'] = undefined;
   /**
+   * Notes regarding the details of this job.
    * @member {String} notes
    */
   exports.prototype['notes'] = undefined;
   /**
+   * The name of the job destination.
    * @member {String} destination_name
    */
   exports.prototype['destination_name'] = undefined;
   /**
+   * The address of the job destination, as it would be recognized if provided to maps.google.com
    * @member {String} destination_address
    */
   exports.prototype['destination_address'] = undefined;
   /**
+   * Latitude of the destination in decimal degrees.
    * @member {Number} destination_lat
    */
   exports.prototype['destination_lat'] = undefined;
   /**
+   * Latitude of the destination in decimal degrees.
    * @member {Number} destination_lng
    */
   exports.prototype['destination_lng'] = undefined;

@@ -1,6 +1,6 @@
 /**
  * Samsara API
- * 
+ * # Introduction The Samsara REST API lets you interact with the Samsara Cloud from anything that can send an HTTP request. With the Samsara API you can build powerful applications and custom solutions with sensor data.  Samsara has endpoints available to track and analyze sensors, vehicles, and entire fleets. If you’re familiar with what you can build with a REST API, the following API reference guide will be your go-to resource.  API access to the Samsara cloud is available to all Samsara administrators. If you’d like to try the API, [contact us](https://www.samsara.com/free-trial). The API is currently in beta and may be subject to frequent changes.  # Connecting to the API There are two ways to connect to the API. If you prefer to use the API in Javascript or Python, we supply SDKs which you can download here: [Javascript SDK](https://github.com/samsarahq/samsara-js), [Python SDK](https://github.com/samsarahq/samsara-python).  If you’d rather use another language to interact with the Samsara API, the endpoints and examples are in the reference guide below.  
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -52,8 +52,8 @@
    * Constructs a new <code>GetDispatchJobsParam</code>.
    * @alias module:models/GetDispatchJobsParam
    * @class
-   * @param groupId {Integer} 
-   * @param durationSeconds {Integer} 
+   * @param groupId {Integer} Group ID to query.
+   * @param durationSeconds {Integer} Duration of the query specified in seconds. E.g. to search for jobs created up to a week before job_created_at_max_ms, set duration_seconds to 604800.
    */
   var exports = function(groupId, durationSeconds) {
     var _this = this;
@@ -88,14 +88,17 @@
   }
 
   /**
+   * Group ID to query.
    * @member {Integer} group_id
    */
   exports.prototype['group_id'] = undefined;
   /**
+   * Maximum value of the JobCreatedAtMs, specified in milliseconds UNIX time.
    * @member {Integer} job_created_at_max_ms
    */
   exports.prototype['job_created_at_max_ms'] = undefined;
   /**
+   * Duration of the query specified in seconds. E.g. to search for jobs created up to a week before job_created_at_max_ms, set duration_seconds to 604800.
    * @member {Integer} duration_seconds
    */
   exports.prototype['duration_seconds'] = undefined;

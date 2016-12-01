@@ -1,6 +1,6 @@
 /**
  * Samsara API
- * 
+ * # Introduction The Samsara REST API lets you interact with the Samsara Cloud from anything that can send an HTTP request. With the Samsara API you can build powerful applications and custom solutions with sensor data.  Samsara has endpoints available to track and analyze sensors, vehicles, and entire fleets. If you’re familiar with what you can build with a REST API, the following API reference guide will be your go-to resource.  API access to the Samsara cloud is available to all Samsara administrators. If you’d like to try the API, [contact us](https://www.samsara.com/free-trial). The API is currently in beta and may be subject to frequent changes.  # Connecting to the API There are two ways to connect to the API. If you prefer to use the API in Javascript or Python, we supply SDKs which you can download here: [Javascript SDK](https://github.com/samsarahq/samsara-js), [Python SDK](https://github.com/samsarahq/samsara-python).  If you’d rather use another language to interact with the Samsara API, the endpoints and examples are in the reference guide below.  
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -55,7 +55,7 @@
    * @param groupId {Integer} Group ID to query.
    * @param startMs {Integer} Beginning of the time range, specified in milliseconds UNIX time.
    * @param endMs {Integer} End of the time range, specified in milliseconds UNIX time.
-   * @param stepMs {Integer} Time resolution for which data should be returned, in milliseconds.
+   * @param stepMs {Integer} Time resolution for which data should be returned, in milliseconds. Specifying 3600000 will return data at hour intervals.
    * @param series {Array.<module:models/SensorshistorySeries>} 
    */
   var exports = function(groupId, startMs, endMs, stepMs, series) {
@@ -118,7 +118,7 @@
    */
   exports.prototype['endMs'] = undefined;
   /**
-   * Time resolution for which data should be returned, in milliseconds.
+   * Time resolution for which data should be returned, in milliseconds. Specifying 3600000 will return data at hour intervals.
    * @member {Integer} stepMs
    */
   exports.prototype['stepMs'] = undefined;

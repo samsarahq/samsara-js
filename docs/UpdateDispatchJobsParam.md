@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**groupId** | **Integer** |  | 
+**groupId** | **Integer** | Group ID to query. | 
 **dispatchJobs** | [**[FleetdispatchJobsupdateDispatchJobs]**](FleetdispatchJobsupdateDispatchJobs.md) |  | 
 
 

@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **endMs** | **Integer** | End of the trip in UNIX milliseconds. | [optional] 
 **endCoordinates** | [**TripResponseEndCoordinates**](TripResponseEndCoordinates.md) |  | [optional] 
 **endLocation** | **String** | Text representation of nearest identifiable location to the end (latitude, longitude) coordinates. | [optional] 
+**distanceMeters** | **Integer** | Length of the trip in meters. | [optional] 
 
 
