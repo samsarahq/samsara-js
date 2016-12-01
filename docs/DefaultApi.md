@@ -4,25 +4,27 @@ All URIs are relative to *https://api.samsara.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addFleetAddress**](DefaultApi.md#addFleetAddress) | **POST** /fleet/add_address | This method adds an address book entry to the specified group.
-[**createFleetDispatchJobs**](DefaultApi.md#createFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/create | Create dispatch jobs in the specified group.
-[**getFleet**](DefaultApi.md#getFleet) | **POST** /fleet/list | This method returns a list of the vehicles in the Samsara Cloud and information about them.
-[**getFleetDispatchJobs**](DefaultApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | Get the dispatch jobs for the specified group.
-[**getFleetDrivers**](DefaultApi.md#getFleetDrivers) | **POST** /fleet/drivers | Get all the drivers for the specified group.
-[**getFleetHosLogs**](DefaultApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | Get the HOS (hours of service) logs for the specified driver.
-[**getFleetLocations**](DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | This method returns the current location in latitude and longitude of all vehicles in a requested group.
-[**getFleetTrips**](DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | This method returns a set of historical trips data for the specified vehicle in the specified time range.
-[**getSensors**](DefaultApi.md#getSensors) | **POST** /sensors/list | This method returns a list of the sensor objects in the Samsara Cloud and information about them.
-[**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
-[**getSensorsHumidity**](DefaultApi.md#getSensorsHumidity) | **POST** /sensors/humidity | This method returns the current relative humidity for the requested sensors.
-[**getSensorsTemperature**](DefaultApi.md#getSensorsTemperature) | **POST** /sensors/temperature | This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
-[**updateFleetDispatchJobs**](DefaultApi.md#updateFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/update | Update dispatch jobs specified group.
-[**updateVehicles**](DefaultApi.md#updateVehicles) | **POST** /fleet/set_data | This method enables the mutation of metadata for vehicles in the Samsara Cloud.
+[**addFleetAddress**](DefaultApi.md#addFleetAddress) | **POST** /fleet/add_address | /fleet/add_address
+[**createFleetDispatchJobs**](DefaultApi.md#createFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/create | /fleet/dispatch_jobs/create
+[**getFleet**](DefaultApi.md#getFleet) | **POST** /fleet/list | /fleet/list
+[**getFleetDispatchJobs**](DefaultApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | /fleet/dispatch_jobs
+[**getFleetDrivers**](DefaultApi.md#getFleetDrivers) | **POST** /fleet/drivers | /fleet/drivers
+[**getFleetHosLogs**](DefaultApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | /fleet/hos_logs
+[**getFleetLocations**](DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | /fleet/locations
+[**getFleetTrips**](DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | /fleet/trips
+[**getSensors**](DefaultApi.md#getSensors) | **POST** /sensors/list | /sensors/list
+[**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | /sensors/history
+[**getSensorsHumidity**](DefaultApi.md#getSensorsHumidity) | **POST** /sensors/humidity | /sensors/humidity
+[**getSensorsTemperature**](DefaultApi.md#getSensorsTemperature) | **POST** /sensors/temperature | /sensors/temperature
+[**updateFleetDispatchJobs**](DefaultApi.md#updateFleetDispatchJobs) | **POST** /fleet/dispatch_jobs/update | /fleet/dispatch_jobs/update
+[**updateVehicles**](DefaultApi.md#updateVehicles) | **POST** /fleet/set_data | /fleet/set_data
 
 
 <a name="addFleetAddress"></a>
 # **addFleetAddress**
 > addFleetAddress(accessToken, addressParam)
+
+/fleet/add_address
 
 This method adds an address book entry to the specified group.
 
@@ -71,6 +73,8 @@ No authorization required
 # **createFleetDispatchJobs**
 > DispatchJobsResponse createFleetDispatchJobs(accessToken, createDispatchJobsParam)
 
+/fleet/dispatch_jobs/create
+
 Create dispatch jobs in the specified group.
 
 ### Example
@@ -118,7 +122,9 @@ No authorization required
 # **getFleet**
 > InlineResponse200 getFleet(accessToken, groupParam)
 
-This method returns a list of the vehicles in the Samsara Cloud and information about them.
+/fleet/list
+
+Get list of the vehicles. This method returns a list of the vehicles in the Samsara Cloud and information about them.
 
 ### Example
 ```javascript
@@ -164,6 +170,8 @@ No authorization required
 <a name="getFleetDispatchJobs"></a>
 # **getFleetDispatchJobs**
 > DispatchJobsResponse getFleetDispatchJobs(accessToken, getDispatchJobsParam)
+
+/fleet/dispatch_jobs
 
 Get the dispatch jobs for the specified group.
 
@@ -212,6 +220,8 @@ No authorization required
 # **getFleetDrivers**
 > DriversRespose getFleetDrivers(accessToken, groupDriversParam)
 
+/fleet/drivers
+
 Get all the drivers for the specified group.
 
 ### Example
@@ -258,6 +268,8 @@ No authorization required
 <a name="getFleetHosLogs"></a>
 # **getFleetHosLogs**
 > HosLogsResponse getFleetHosLogs(accessToken, hosLogsParam)
+
+/fleet/hos_logs
 
 Get the HOS (hours of service) logs for the specified driver.
 
@@ -306,7 +318,9 @@ No authorization required
 # **getFleetLocations**
 > InlineResponse2001 getFleetLocations(accessToken, groupParam)
 
-This method returns the current location in latitude and longitude of all vehicles in a requested group.
+/fleet/locations
+
+Get current location of vehicles in a group. This method returns the current location in latitude and longitude of all vehicles in a requested group.
 
 ### Example
 ```javascript
@@ -353,7 +367,9 @@ No authorization required
 # **getFleetTrips**
 > TripResponse getFleetTrips(accessToken, tripsParam)
 
-This method returns a set of historical trips data for the specified vehicle in the specified time range.
+/fleet/trips
+
+Get historical trips data for specified vehicle. This method returns a set of historical trips data for the specified vehicle in the specified time range.
 
 ### Example
 ```javascript
@@ -400,7 +416,9 @@ No authorization required
 # **getSensors**
 > InlineResponse2002 getSensors(accessToken, groupParam)
 
-This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+/sensors/list
+
+Get sensor objects. This method returns a list of the sensor objects in the Samsara Cloud and information about them.
 
 ### Example
 ```javascript
@@ -447,7 +465,9 @@ No authorization required
 # **getSensorsHistory**
 > SensorHistoryResponse getSensorsHistory(accessToken, historyParam)
 
-This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+/sensors/history
+
+Get historical data for specified sensors. This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
 
 ### Example
 ```javascript
@@ -494,7 +514,9 @@ No authorization required
 # **getSensorsHumidity**
 > HumidityResponse getSensorsHumidity(accessToken, sensorParam)
 
-This method returns the current relative humidity for the requested sensors.
+/sensors/humidity
+
+Get humidity for requested sensors. This method returns the current relative humidity for the requested sensors.
 
 ### Example
 ```javascript
@@ -541,7 +563,9 @@ No authorization required
 # **getSensorsTemperature**
 > TemperatureResponse getSensorsTemperature(accessToken, sensorParam)
 
-This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+/sensors/temperature
+
+Get temperature for requested sensors. This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
 
 ### Example
 ```javascript
@@ -588,7 +612,9 @@ No authorization required
 # **updateFleetDispatchJobs**
 > DispatchJobsResponse updateFleetDispatchJobs(accessToken, updateDispatchJobsParam)
 
-Update dispatch jobs specified group.
+/fleet/dispatch_jobs/update
+
+Update dispatch jobs in the specified group.
 
 ### Example
 ```javascript
@@ -634,6 +660,8 @@ No authorization required
 <a name="updateVehicles"></a>
 # **updateVehicles**
 > updateVehicles(accessToken, vehicleUpdateParam)
+
+/fleet/set_data
 
 This method enables the mutation of metadata for vehicles in the Samsara Cloud.
 

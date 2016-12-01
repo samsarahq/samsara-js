@@ -1,6 +1,6 @@
 /**
  * Samsara API
- * 
+ * # Introduction The Samsara REST API lets you interact with the Samsara Cloud from anything that can send an HTTP request. With the Samsara API you can build powerful applications and custom solutions with sensor data.  Samsara has endpoints available to track and analyze sensors, vehicles, and entire fleets. If you’re familiar with what you can build with a REST API, the following API reference guide will be your go-to resource.  API access to the Samsara cloud is available to all Samsara administrators. If you’d like to try the API, [contact us](https://www.samsara.com/free-trial). The API is currently in beta and may be subject to frequent changes.  # Connecting to the API There are two ways to connect to the API. If you prefer to use the API in Javascript or Python, we supply SDKs which you can download here: [Javascript SDK](https://github.com/samsarahq/samsara-js), [Python SDK](https://github.com/samsarahq/samsara-python).  If you’d rather use another language to interact with the Samsara API, the endpoints and examples are in the reference guide below.  
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -65,6 +65,7 @@
      */
 
     /**
+     * /fleet/add_address
      * This method adds an address book entry to the specified group.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/AddressParam} addressParam 
@@ -115,6 +116,7 @@
      */
 
     /**
+     * /fleet/dispatch_jobs/create
      * Create dispatch jobs in the specified group.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/CreateDispatchJobsParam} createDispatchJobsParam 
@@ -166,7 +168,8 @@
      */
 
     /**
-     * This method returns a list of the vehicles in the Samsara Cloud and information about them.
+     * /fleet/list
+     * Get list of the vehicles. This method returns a list of the vehicles in the Samsara Cloud and information about them.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getFleetCallback} callback The callback function, accepting three arguments: error, data, response
@@ -217,6 +220,7 @@
      */
 
     /**
+     * /fleet/dispatch_jobs
      * Get the dispatch jobs for the specified group.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GetDispatchJobsParam} getDispatchJobsParam 
@@ -268,6 +272,7 @@
      */
 
     /**
+     * /fleet/drivers
      * Get all the drivers for the specified group.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupDriversParam} groupDriversParam 
@@ -319,6 +324,7 @@
      */
 
     /**
+     * /fleet/hos_logs
      * Get the HOS (hours of service) logs for the specified driver.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/HosLogsParam} hosLogsParam 
@@ -370,7 +376,8 @@
      */
 
     /**
-     * This method returns the current location in latitude and longitude of all vehicles in a requested group.
+     * /fleet/locations
+     * Get current location of vehicles in a group. This method returns the current location in latitude and longitude of all vehicles in a requested group.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getFleetLocationsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -421,7 +428,8 @@
      */
 
     /**
-     * This method returns a set of historical trips data for the specified vehicle in the specified time range.
+     * /fleet/trips
+     * Get historical trips data for specified vehicle. This method returns a set of historical trips data for the specified vehicle in the specified time range.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/TripsParam} tripsParam Group ID, vehicle ID and time range to query.
      * @param {module:client/DefaultApi~getFleetTripsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -472,7 +480,8 @@
      */
 
     /**
-     * This method returns a list of the sensor objects in the Samsara Cloud and information about them.
+     * /sensors/list
+     * Get sensor objects. This method returns a list of the sensor objects in the Samsara Cloud and information about them.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/DefaultApi~getSensorsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -523,7 +532,8 @@
      */
 
     /**
-     * This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
+     * /sensors/history
+     * Get historical data for specified sensors. This method returns a set of historical data for the specified sensors in the specified time range and at the specified time resolution.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/HistoryParam} historyParam Group ID, time range and resolution, and list of sensor ID, field pairs to query.
      * @param {module:client/DefaultApi~getSensorsHistoryCallback} callback The callback function, accepting three arguments: error, data, response
@@ -574,7 +584,8 @@
      */
 
     /**
-     * This method returns the current relative humidity for the requested sensors.
+     * /sensors/humidity
+     * Get humidity for requested sensors. This method returns the current relative humidity for the requested sensors.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/DefaultApi~getSensorsHumidityCallback} callback The callback function, accepting three arguments: error, data, response
@@ -625,7 +636,8 @@
      */
 
     /**
-     * This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
+     * /sensors/temperature
+     * Get temperature for requested sensors. This method returns the current ambient temperature (and probe temperature if applicable) for the requested sensors.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/DefaultApi~getSensorsTemperatureCallback} callback The callback function, accepting three arguments: error, data, response
@@ -676,7 +688,8 @@
      */
 
     /**
-     * Update dispatch jobs specified group.
+     * /fleet/dispatch_jobs/update
+     * Update dispatch jobs in the specified group.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/UpdateDispatchJobsParam} updateDispatchJobsParam 
      * @param {module:client/DefaultApi~updateFleetDispatchJobsCallback} callback The callback function, accepting three arguments: error, data, response
@@ -727,6 +740,7 @@
      */
 
     /**
+     * /fleet/set_data
      * This method enables the mutation of metadata for vehicles in the Samsara Cloud.
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/VehicleUpdateParam} vehicleUpdateParam 
