@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getFleet**](FleetApi.md#getFleet) | **POST** /fleet/list | /fleet/list
 [**getFleetDispatchJobs**](FleetApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | /fleet/dispatch_jobs
 [**getFleetDrivers**](FleetApi.md#getFleetDrivers) | **POST** /fleet/drivers | /fleet/drivers
+[**getFleetDriversSummary**](FleetApi.md#getFleetDriversSummary) | **POST** /fleet/drivers/summary | /fleet/drivers/summary
 [**getFleetHosLogs**](FleetApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | /fleet/hos_logs
 [**getFleetLocations**](FleetApi.md#getFleetLocations) | **POST** /fleet/locations | /fleet/locations
 [**getFleetTrips**](FleetApi.md#getFleetTrips) | **POST** /fleet/trips | /fleet/trips
@@ -251,6 +252,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DriversRespose**](DriversRespose.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFleetDriversSummary"></a>
+# **getFleetDriversSummary**
+> DriversSummaryResponse getFleetDriversSummary(accessToken, driversSummaryParam)
+
+/fleet/drivers/summary
+
+Get the distance and time each driver in an organization has driven in a given time period.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.FleetApi();
+
+var accessToken = "accessToken_example"; // String | Samsara API access token.
+
+var driversSummaryParam = new SamsaraApi.DriversSummaryParam(); // DriversSummaryParam | Org ID and time range to query.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFleetDriversSummary(accessToken, driversSummaryParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **driversSummaryParam** | [**DriversSummaryParam**](DriversSummaryParam.md)| Org ID and time range to query. | 
+
+### Return type
+
+[**DriversSummaryResponse**](DriversSummaryResponse.md)
 
 ### Authorization
 

@@ -57,6 +57,7 @@ Class | Method | HTTP request | Description
 *SamsaraApi.DefaultApi* | [**getFleet**](docs/DefaultApi.md#getFleet) | **POST** /fleet/list | This method returns a list of the vehicles in the Samsara Cloud and information about them.
 *SamsaraApi.DefaultApi* | [**getFleetDispatchJobs**](docs/DefaultApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | Get the dispatch jobs for the specified group.
 *SamsaraApi.DefaultApi* | [**getFleetDrivers**](docs/DefaultApi.md#getFleetDrivers) | **POST** /fleet/drivers | Get all the drivers for the specified group.
+*SamsaraApi.DefaultApi* | [**getFleetDriversSummary**](docs/DefaultApi.md#getFleetDriversSummary) | **POST** /fleet/drivers/summary | Get activity summaries for all drivers in the specified org.
 *SamsaraApi.DefaultApi* | [**getFleetHosLogs**](docs/DefaultApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | Get the HOS (hours of service) logs for the specified driver.
 *SamsaraApi.DefaultApi* | [**getFleetLocations**](docs/DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | This method returns the current location in latitude and longitude of all vehicles in a requested group.
 *SamsaraApi.DefaultApi* | [**getFleetTrips**](docs/DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | This method returns a set of historical trips data for the specified vehicle in the specified time range.
@@ -76,6 +77,9 @@ Class | Method | HTTP request | Description
  - [SamsaraApi.DispatchJobsResponseDispatchJobs](docs/DispatchJobsResponseDispatchJobs.md)
  - [SamsaraApi.DriversRespose](docs/DriversRespose.md)
  - [SamsaraApi.DriversResposeDrivers](docs/DriversResposeDrivers.md)
+ - [SamsaraApi.DriversSummaryParam](docs/DriversSummaryParam.md)
+ - [SamsaraApi.DriversSummaryResponse](docs/DriversSummaryResponse.md)
+ - [SamsaraApi.DriversSummaryResponseSummaries](docs/DriversSummaryResponseSummaries.md)
  - [SamsaraApi.ErrorResponse](docs/ErrorResponse.md)
  - [SamsaraApi.FleetdispatchJobscreateDispatchJobs](docs/FleetdispatchJobscreateDispatchJobs.md)
  - [SamsaraApi.FleetdispatchJobsupdateDispatchJobs](docs/FleetdispatchJobsupdateDispatchJobs.md)

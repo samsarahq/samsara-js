@@ -70,7 +70,7 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/SensorsApi~getSensorsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:models/InlineResponse2002}
+     * data is of type: {@link module:models/InlineResponse2002}
      */
     this.getSensors = function(accessToken, groupParam, callback) {
       var postBody = groupParam;
@@ -122,7 +122,7 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/HistoryParam} historyParam Group ID, time range and resolution, and list of sensor ID, field pairs to query.
      * @param {module:client/SensorsApi~getSensorsHistoryCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:models/SensorHistoryResponse}
+     * data is of type: {@link module:models/SensorHistoryResponse}
      */
     this.getSensorsHistory = function(accessToken, historyParam, callback) {
       var postBody = historyParam;
@@ -174,7 +174,7 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/SensorsApi~getSensorsHumidityCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:models/HumidityResponse}
+     * data is of type: {@link module:models/HumidityResponse}
      */
     this.getSensorsHumidity = function(accessToken, sensorParam, callback) {
       var postBody = sensorParam;
@@ -226,7 +226,7 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/SensorParam} sensorParam Group ID and list of sensor IDs to query.
      * @param {module:client/SensorsApi~getSensorsTemperatureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {module:models/TemperatureResponse}
+     * data is of type: {@link module:models/TemperatureResponse}
      */
     this.getSensorsTemperature = function(accessToken, sensorParam, callback) {
       var postBody = sensorParam;
