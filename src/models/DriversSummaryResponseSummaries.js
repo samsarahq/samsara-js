@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -80,14 +81,17 @@
       if (data.hasOwnProperty('driverName')) {
         obj['driverName'] = ApiClient.convertToType(data['driverName'], 'String');
       }
+      if (data.hasOwnProperty('driverUsername')) {
+        obj['driverUsername'] = ApiClient.convertToType(data['driverUsername'], 'String');
+      }
       if (data.hasOwnProperty('groupId')) {
         obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Integer');
       }
-      if (data.hasOwnProperty('activeMs')) {
-        obj['activeMs'] = ApiClient.convertToType(data['activeMs'], 'Integer');
+      if (data.hasOwnProperty('activeHours')) {
+        obj['activeHours'] = ApiClient.convertToType(data['activeHours'], 'Number');
       }
-      if (data.hasOwnProperty('distanceMeters')) {
-        obj['distanceMeters'] = ApiClient.convertToType(data['distanceMeters'], 'Integer');
+      if (data.hasOwnProperty('distanceMiles')) {
+        obj['distanceMiles'] = ApiClient.convertToType(data['distanceMiles'], 'Number');
       }
     }
     return obj;
@@ -104,20 +108,25 @@
    */
   exports.prototype['driverName'] = undefined;
   /**
+   * Username of the driver.
+   * @member {String} driverUsername
+   */
+  exports.prototype['driverUsername'] = undefined;
+  /**
    * Group of the driver.
    * @member {Integer} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
-   * Milliseconds spent on duty or driving.
-   * @member {Integer} activeMs
+   * Hours spent on duty or driving, rounded to two decimal places.
+   * @member {Number} activeHours
    */
-  exports.prototype['activeMs'] = undefined;
+  exports.prototype['activeHours'] = undefined;
   /**
-   * Distance driven in meters.
-   * @member {Integer} distanceMeters
+   * Distance driven in miles, rounded to two decimal places.
+   * @member {Number} distanceMiles
    */
-  exports.prototype['distanceMeters'] = undefined;
+  exports.prototype['distanceMiles'] = undefined;
 
 
 
