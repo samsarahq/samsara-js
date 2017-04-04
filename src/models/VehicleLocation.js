@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -53,12 +42,13 @@
    * Contains the location, in latitude and longitude, of a vehicle.
    * @alias module:models/VehicleLocation
    * @class
-   * @param id {Integer} ID of the vehicle.
+   * @param id {Number} ID of the vehicle.
    */
   var exports = function(id) {
     var _this = this;
 
     _this['id'] = id;
+
 
 
 
@@ -78,7 +68,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -93,7 +83,10 @@
         obj['location'] = ApiClient.convertToType(data['location'], 'String');
       }
       if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Integer');
+        obj['time'] = ApiClient.convertToType(data['time'], 'Number');
+      }
+      if (data.hasOwnProperty('onTrip')) {
+        obj['onTrip'] = ApiClient.convertToType(data['onTrip'], 'Boolean');
       }
     }
     return obj;
@@ -101,7 +94,7 @@
 
   /**
    * ID of the vehicle.
-   * @member {Integer} id
+   * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
@@ -126,9 +119,14 @@
   exports.prototype['location'] = undefined;
   /**
    * The time the reported location was logged, reported as a UNIX timestamp in milliseconds.
-   * @member {Integer} time
+   * @member {Number} time
    */
   exports.prototype['time'] = undefined;
+  /**
+   * Whether or not a trip is currently in progress for this vehicle. More information available via /fleet/trips endpoint.
+   * @member {Boolean} onTrip
+   */
+  exports.prototype['onTrip'] = undefined;
 
 
 

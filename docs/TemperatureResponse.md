@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**groupId** | **Integer** |  | [optional] 
+**groupId** | **Number** |  | [optional] 
 **sensors** | [**[TemperatureResponseSensors]**](TemperatureResponseSensors.md) |  | [optional] 
 
 

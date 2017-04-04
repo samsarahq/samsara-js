@@ -9,28 +9,17 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/AddressParam', 'models/CreateDispatchJobsParam', 'models/DispatchJobsResponse', 'models/DispatchJobsResponseDispatchJobs', 'models/DriversRespose', 'models/DriversResposeDrivers', 'models/DriversSummaryParam', 'models/DriversSummaryResponse', 'models/DriversSummaryResponseSummaries', 'models/ErrorResponse', 'models/FleetdispatchJobscreateDispatchJobs', 'models/FleetdispatchJobsupdateDispatchJobs', 'models/GetDispatchJobsParam', 'models/GroupDriversParam', 'models/GroupParam', 'models/HistoryParam', 'models/HosLogsParam', 'models/HosLogsResponse', 'models/HosLogsResponseLogs', 'models/HumidityResponse', 'models/HumidityResponseSensors', 'models/InlineResponse200', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/Sensor', 'models/SensorHistoryResponse', 'models/SensorHistoryResponseResults', 'models/SensorParam', 'models/SensorshistorySeries', 'models/TemperatureResponse', 'models/TemperatureResponseSensors', 'models/TripResponse', 'models/TripResponseEndCoordinates', 'models/TripResponseStartCoordinates', 'models/TripResponseTrips', 'models/TripsParam', 'models/UpdateDispatchJobsParam', 'models/Vehicle', 'models/VehicleLocation', 'models/VehicleUpdateParam', 'client/DefaultApi', 'client/FleetApi', 'client/SensorsApi'], factory);
+    define(['ApiClient', 'models/AddressParam', 'models/CreateDispatchJobsParam', 'models/DispatchJobsResponse', 'models/DispatchJobsResponseDispatchJobs', 'models/DriversRespose', 'models/DriversResposeDrivers', 'models/DriversSummaryParam', 'models/DriversSummaryResponse', 'models/DriversSummaryResponseSummaries', 'models/ErrorResponse', 'models/FleetdispatchJobscreateDispatchJobs', 'models/FleetdispatchJobsupdateDispatchJobs', 'models/GetDispatchJobsParam', 'models/GroupDriversParam', 'models/GroupParam', 'models/HistoryParam', 'models/HosAuthenticationLogsParam', 'models/HosAuthenticationLogsResponse', 'models/HosAuthenticationLogsResponseAuthenticationLogs', 'models/HosLogsParam', 'models/HosLogsResponse', 'models/HosLogsResponseLogs', 'models/HumidityResponse', 'models/HumidityResponseSensors', 'models/InlineResponse200', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/InlineResponse2003', 'models/Sensor', 'models/SensorHistoryResponse', 'models/SensorHistoryResponseResults', 'models/SensorParam', 'models/SensorshistorySeries', 'models/TemperatureResponse', 'models/TemperatureResponseSensors', 'models/TripResponse', 'models/TripResponseEndCoordinates', 'models/TripResponseStartCoordinates', 'models/TripResponseTrips', 'models/TripsParam', 'models/UpdateDispatchJobsParam', 'models/Vehicle', 'models/VehicleLocation', 'models/VehicleMaintenance', 'models/VehicleMaintenanceJ1939', 'models/VehicleMaintenanceJ1939CheckEngineLight', 'models/VehicleMaintenanceJ1939DiagnosticTroubleCodes', 'models/VehicleMaintenancePassenger', 'models/VehicleMaintenancePassengerCheckEngineLight', 'models/VehicleMaintenancePassengerDiagnosticTroubleCodes', 'models/VehicleUpdateParam', 'client/DefaultApi', 'client/FleetApi', 'client/SensorsApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./models/AddressParam'), require('./models/CreateDispatchJobsParam'), require('./models/DispatchJobsResponse'), require('./models/DispatchJobsResponseDispatchJobs'), require('./models/DriversRespose'), require('./models/DriversResposeDrivers'), require('./models/DriversSummaryParam'), require('./models/DriversSummaryResponse'), require('./models/DriversSummaryResponseSummaries'), require('./models/ErrorResponse'), require('./models/FleetdispatchJobscreateDispatchJobs'), require('./models/FleetdispatchJobsupdateDispatchJobs'), require('./models/GetDispatchJobsParam'), require('./models/GroupDriversParam'), require('./models/GroupParam'), require('./models/HistoryParam'), require('./models/HosLogsParam'), require('./models/HosLogsResponse'), require('./models/HosLogsResponseLogs'), require('./models/HumidityResponse'), require('./models/HumidityResponseSensors'), require('./models/InlineResponse200'), require('./models/InlineResponse2001'), require('./models/InlineResponse2002'), require('./models/Sensor'), require('./models/SensorHistoryResponse'), require('./models/SensorHistoryResponseResults'), require('./models/SensorParam'), require('./models/SensorshistorySeries'), require('./models/TemperatureResponse'), require('./models/TemperatureResponseSensors'), require('./models/TripResponse'), require('./models/TripResponseEndCoordinates'), require('./models/TripResponseStartCoordinates'), require('./models/TripResponseTrips'), require('./models/TripsParam'), require('./models/UpdateDispatchJobsParam'), require('./models/Vehicle'), require('./models/VehicleLocation'), require('./models/VehicleUpdateParam'), require('./client/DefaultApi'), require('./client/FleetApi'), require('./client/SensorsApi'));
+    module.exports = factory(require('./ApiClient'), require('./models/AddressParam'), require('./models/CreateDispatchJobsParam'), require('./models/DispatchJobsResponse'), require('./models/DispatchJobsResponseDispatchJobs'), require('./models/DriversRespose'), require('./models/DriversResposeDrivers'), require('./models/DriversSummaryParam'), require('./models/DriversSummaryResponse'), require('./models/DriversSummaryResponseSummaries'), require('./models/ErrorResponse'), require('./models/FleetdispatchJobscreateDispatchJobs'), require('./models/FleetdispatchJobsupdateDispatchJobs'), require('./models/GetDispatchJobsParam'), require('./models/GroupDriversParam'), require('./models/GroupParam'), require('./models/HistoryParam'), require('./models/HosAuthenticationLogsParam'), require('./models/HosAuthenticationLogsResponse'), require('./models/HosAuthenticationLogsResponseAuthenticationLogs'), require('./models/HosLogsParam'), require('./models/HosLogsResponse'), require('./models/HosLogsResponseLogs'), require('./models/HumidityResponse'), require('./models/HumidityResponseSensors'), require('./models/InlineResponse200'), require('./models/InlineResponse2001'), require('./models/InlineResponse2002'), require('./models/InlineResponse2003'), require('./models/Sensor'), require('./models/SensorHistoryResponse'), require('./models/SensorHistoryResponseResults'), require('./models/SensorParam'), require('./models/SensorshistorySeries'), require('./models/TemperatureResponse'), require('./models/TemperatureResponseSensors'), require('./models/TripResponse'), require('./models/TripResponseEndCoordinates'), require('./models/TripResponseStartCoordinates'), require('./models/TripResponseTrips'), require('./models/TripsParam'), require('./models/UpdateDispatchJobsParam'), require('./models/Vehicle'), require('./models/VehicleLocation'), require('./models/VehicleMaintenance'), require('./models/VehicleMaintenanceJ1939'), require('./models/VehicleMaintenanceJ1939CheckEngineLight'), require('./models/VehicleMaintenanceJ1939DiagnosticTroubleCodes'), require('./models/VehicleMaintenancePassenger'), require('./models/VehicleMaintenancePassengerCheckEngineLight'), require('./models/VehicleMaintenancePassengerDiagnosticTroubleCodes'), require('./models/VehicleUpdateParam'), require('./client/DefaultApi'), require('./client/FleetApi'), require('./client/SensorsApi'));
   }
-}(function(ApiClient, AddressParam, CreateDispatchJobsParam, DispatchJobsResponse, DispatchJobsResponseDispatchJobs, DriversRespose, DriversResposeDrivers, DriversSummaryParam, DriversSummaryResponse, DriversSummaryResponseSummaries, ErrorResponse, FleetdispatchJobscreateDispatchJobs, FleetdispatchJobsupdateDispatchJobs, GetDispatchJobsParam, GroupDriversParam, GroupParam, HistoryParam, HosLogsParam, HosLogsResponse, HosLogsResponseLogs, HumidityResponse, HumidityResponseSensors, InlineResponse200, InlineResponse2001, InlineResponse2002, Sensor, SensorHistoryResponse, SensorHistoryResponseResults, SensorParam, SensorshistorySeries, TemperatureResponse, TemperatureResponseSensors, TripResponse, TripResponseEndCoordinates, TripResponseStartCoordinates, TripResponseTrips, TripsParam, UpdateDispatchJobsParam, Vehicle, VehicleLocation, VehicleUpdateParam, DefaultApi, FleetApi, SensorsApi) {
+}(function(ApiClient, AddressParam, CreateDispatchJobsParam, DispatchJobsResponse, DispatchJobsResponseDispatchJobs, DriversRespose, DriversResposeDrivers, DriversSummaryParam, DriversSummaryResponse, DriversSummaryResponseSummaries, ErrorResponse, FleetdispatchJobscreateDispatchJobs, FleetdispatchJobsupdateDispatchJobs, GetDispatchJobsParam, GroupDriversParam, GroupParam, HistoryParam, HosAuthenticationLogsParam, HosAuthenticationLogsResponse, HosAuthenticationLogsResponseAuthenticationLogs, HosLogsParam, HosLogsResponse, HosLogsResponseLogs, HumidityResponse, HumidityResponseSensors, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, Sensor, SensorHistoryResponse, SensorHistoryResponseResults, SensorParam, SensorshistorySeries, TemperatureResponse, TemperatureResponseSensors, TripResponse, TripResponseEndCoordinates, TripResponseStartCoordinates, TripResponseTrips, TripsParam, UpdateDispatchJobsParam, Vehicle, VehicleLocation, VehicleMaintenance, VehicleMaintenanceJ1939, VehicleMaintenanceJ1939CheckEngineLight, VehicleMaintenanceJ1939DiagnosticTroubleCodes, VehicleMaintenancePassenger, VehicleMaintenancePassengerCheckEngineLight, VehicleMaintenancePassengerDiagnosticTroubleCodes, VehicleUpdateParam, DefaultApi, FleetApi, SensorsApi) {
   'use strict';
 
   /**
@@ -151,6 +140,21 @@
      */
     HistoryParam: HistoryParam,
     /**
+     * The HosAuthenticationLogsParam model constructor.
+     * @property {module:models/HosAuthenticationLogsParam}
+     */
+    HosAuthenticationLogsParam: HosAuthenticationLogsParam,
+    /**
+     * The HosAuthenticationLogsResponse model constructor.
+     * @property {module:models/HosAuthenticationLogsResponse}
+     */
+    HosAuthenticationLogsResponse: HosAuthenticationLogsResponse,
+    /**
+     * The HosAuthenticationLogsResponseAuthenticationLogs model constructor.
+     * @property {module:models/HosAuthenticationLogsResponseAuthenticationLogs}
+     */
+    HosAuthenticationLogsResponseAuthenticationLogs: HosAuthenticationLogsResponseAuthenticationLogs,
+    /**
      * The HosLogsParam model constructor.
      * @property {module:models/HosLogsParam}
      */
@@ -190,6 +194,11 @@
      * @property {module:models/InlineResponse2002}
      */
     InlineResponse2002: InlineResponse2002,
+    /**
+     * The InlineResponse2003 model constructor.
+     * @property {module:models/InlineResponse2003}
+     */
+    InlineResponse2003: InlineResponse2003,
     /**
      * The Sensor model constructor.
      * @property {module:models/Sensor}
@@ -265,6 +274,41 @@
      * @property {module:models/VehicleLocation}
      */
     VehicleLocation: VehicleLocation,
+    /**
+     * The VehicleMaintenance model constructor.
+     * @property {module:models/VehicleMaintenance}
+     */
+    VehicleMaintenance: VehicleMaintenance,
+    /**
+     * The VehicleMaintenanceJ1939 model constructor.
+     * @property {module:models/VehicleMaintenanceJ1939}
+     */
+    VehicleMaintenanceJ1939: VehicleMaintenanceJ1939,
+    /**
+     * The VehicleMaintenanceJ1939CheckEngineLight model constructor.
+     * @property {module:models/VehicleMaintenanceJ1939CheckEngineLight}
+     */
+    VehicleMaintenanceJ1939CheckEngineLight: VehicleMaintenanceJ1939CheckEngineLight,
+    /**
+     * The VehicleMaintenanceJ1939DiagnosticTroubleCodes model constructor.
+     * @property {module:models/VehicleMaintenanceJ1939DiagnosticTroubleCodes}
+     */
+    VehicleMaintenanceJ1939DiagnosticTroubleCodes: VehicleMaintenanceJ1939DiagnosticTroubleCodes,
+    /**
+     * The VehicleMaintenancePassenger model constructor.
+     * @property {module:models/VehicleMaintenancePassenger}
+     */
+    VehicleMaintenancePassenger: VehicleMaintenancePassenger,
+    /**
+     * The VehicleMaintenancePassengerCheckEngineLight model constructor.
+     * @property {module:models/VehicleMaintenancePassengerCheckEngineLight}
+     */
+    VehicleMaintenancePassengerCheckEngineLight: VehicleMaintenancePassengerCheckEngineLight,
+    /**
+     * The VehicleMaintenancePassengerDiagnosticTroubleCodes model constructor.
+     * @property {module:models/VehicleMaintenancePassengerDiagnosticTroubleCodes}
+     */
+    VehicleMaintenancePassengerDiagnosticTroubleCodes: VehicleMaintenancePassengerDiagnosticTroubleCodes,
     /**
      * The VehicleUpdateParam model constructor.
      * @property {module:models/VehicleUpdateParam}

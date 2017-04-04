@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**orgId** | **Integer** | Org ID to query. | 
-**startMs** | **Integer** | Start time (ms) of queried time period. | 
-**endMs** | **Integer** | End time (ms) of queried time period. | 
+**orgId** | **Number** | Org ID to query. | 
+**startMs** | **Number** | Start time (ms) of queried time period. | 
+**endMs** | **Number** | End time (ms) of queried time period. | 
 
 

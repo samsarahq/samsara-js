@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -52,10 +41,10 @@
    * Constructs a new <code>HosLogsParam</code>.
    * @alias module:models/HosLogsParam
    * @class
-   * @param groupId {Integer} Group ID to query.
-   * @param driverId {Integer} Driver ID to query.
-   * @param startMs {Integer} Beginning of the time range, specified in milliseconds UNIX time.
-   * @param endMs {Integer} End of the time range, specified in milliseconds UNIX time.
+   * @param groupId {Number} Group ID to query.
+   * @param driverId {Number} Driver ID to query.
+   * @param startMs {Number} Beginning of the time range, specified in milliseconds UNIX time.
+   * @param endMs {Number} End of the time range, specified in milliseconds UNIX time.
    */
   var exports = function(groupId, driverId, startMs, endMs) {
     var _this = this;
@@ -78,16 +67,16 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('groupId')) {
-        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Integer');
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Number');
       }
       if (data.hasOwnProperty('driverId')) {
-        obj['driverId'] = ApiClient.convertToType(data['driverId'], 'Integer');
+        obj['driverId'] = ApiClient.convertToType(data['driverId'], 'Number');
       }
       if (data.hasOwnProperty('startMs')) {
-        obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Integer');
+        obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Number');
       }
       if (data.hasOwnProperty('endMs')) {
-        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Integer');
+        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Number');
       }
     }
     return obj;
@@ -95,22 +84,22 @@
 
   /**
    * Group ID to query.
-   * @member {Integer} groupId
+   * @member {Number} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
    * Driver ID to query.
-   * @member {Integer} driverId
+   * @member {Number} driverId
    */
   exports.prototype['driverId'] = undefined;
   /**
    * Beginning of the time range, specified in milliseconds UNIX time.
-   * @member {Integer} startMs
+   * @member {Number} startMs
    */
   exports.prototype['startMs'] = undefined;
   /**
    * End of the time range, specified in milliseconds UNIX time.
-   * @member {Integer} endMs
+   * @member {Number} endMs
    */
   exports.prototype['endMs'] = undefined;
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**widgetId** | **Integer** | Sensor ID to query. | 
+**widgetId** | **Number** | Sensor ID to query. | 
 **field** | **String** | Field to query. | 
 
 

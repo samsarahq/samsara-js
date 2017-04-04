@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -52,8 +41,8 @@
    * Constructs a new <code>GetDispatchJobsParam</code>.
    * @alias module:models/GetDispatchJobsParam
    * @class
-   * @param groupId {Integer} Group ID to query.
-   * @param durationSeconds {Integer} Duration of the query specified in seconds. E.g. to search for jobs created up to a week before job_created_at_max_ms, set duration_seconds to 604800.
+   * @param groupId {Number} Group ID to query.
+   * @param durationSeconds {Number} Duration of the query specified in seconds. E.g. to search for jobs created up to a week before job_created_at_max_ms, set duration_seconds to 604800.
    */
   var exports = function(groupId, durationSeconds) {
     var _this = this;
@@ -75,13 +64,13 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('group_id')) {
-        obj['group_id'] = ApiClient.convertToType(data['group_id'], 'Integer');
+        obj['group_id'] = ApiClient.convertToType(data['group_id'], 'Number');
       }
       if (data.hasOwnProperty('job_created_at_max_ms')) {
-        obj['job_created_at_max_ms'] = ApiClient.convertToType(data['job_created_at_max_ms'], 'Integer');
+        obj['job_created_at_max_ms'] = ApiClient.convertToType(data['job_created_at_max_ms'], 'Number');
       }
       if (data.hasOwnProperty('duration_seconds')) {
-        obj['duration_seconds'] = ApiClient.convertToType(data['duration_seconds'], 'Integer');
+        obj['duration_seconds'] = ApiClient.convertToType(data['duration_seconds'], 'Number');
       }
     }
     return obj;
@@ -89,17 +78,17 @@
 
   /**
    * Group ID to query.
-   * @member {Integer} group_id
+   * @member {Number} group_id
    */
   exports.prototype['group_id'] = undefined;
   /**
    * Maximum value of the JobCreatedAtMs, specified in milliseconds UNIX time.
-   * @member {Integer} job_created_at_max_ms
+   * @member {Number} job_created_at_max_ms
    */
   exports.prototype['job_created_at_max_ms'] = undefined;
   /**
    * Duration of the query specified in seconds. E.g. to search for jobs created up to a week before job_created_at_max_ms, set duration_seconds to 604800.
-   * @member {Integer} duration_seconds
+   * @member {Number} duration_seconds
    */
   exports.prototype['duration_seconds'] = undefined;
 

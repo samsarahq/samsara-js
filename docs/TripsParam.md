@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**groupId** | **Integer** | Group ID to query. | 
-**vehicleId** | **Integer** | Vehicle ID to query. | 
-**startMs** | **Integer** | Beginning of the time range, specified in milliseconds UNIX time. | 
-**endMs** | **Integer** | End of the time range, specified in milliseconds UNIX time. | 
+**groupId** | **Number** | Group ID to query. | 
+**vehicleId** | **Number** | Vehicle ID to query. | 
+**startMs** | **Number** | Beginning of the time range, specified in milliseconds UNIX time. | 
+**endMs** | **Number** | End of the time range, specified in milliseconds UNIX time. | 
 
 

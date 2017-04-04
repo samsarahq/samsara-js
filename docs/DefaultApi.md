@@ -10,8 +10,10 @@ Method | HTTP request | Description
 [**getFleetDispatchJobs**](DefaultApi.md#getFleetDispatchJobs) | **POST** /fleet/dispatch_jobs | /fleet/dispatch_jobs
 [**getFleetDrivers**](DefaultApi.md#getFleetDrivers) | **POST** /fleet/drivers | /fleet/drivers
 [**getFleetDriversSummary**](DefaultApi.md#getFleetDriversSummary) | **POST** /fleet/drivers/summary | /fleet/drivers/summary
+[**getFleetHosAuthenticationLogs**](DefaultApi.md#getFleetHosAuthenticationLogs) | **POST** /fleet/hos_authentication_logs | /fleet/hos_authentication_logs
 [**getFleetHosLogs**](DefaultApi.md#getFleetHosLogs) | **POST** /fleet/hos_logs | /fleet/hos_logs
 [**getFleetLocations**](DefaultApi.md#getFleetLocations) | **POST** /fleet/locations | /fleet/locations
+[**getFleetMaintenanceList**](DefaultApi.md#getFleetMaintenanceList) | **POST** /fleet/maintenance/list | /fleet/maintenance/list
 [**getFleetTrips**](DefaultApi.md#getFleetTrips) | **POST** /fleet/trips | /fleet/trips
 [**getSensors**](DefaultApi.md#getSensors) | **POST** /sensors/list | /sensors/list
 [**getSensorsHistory**](DefaultApi.md#getSensorsHistory) | **POST** /sensors/history | /sensors/history
@@ -121,7 +123,7 @@ No authorization required
 
 <a name="getFleet"></a>
 # **getFleet**
-> InlineResponse200 getFleet(accessToken, groupParam)
+> InlineResponse2001 getFleet(accessToken, groupParam)
 
 /fleet/list
 
@@ -157,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -315,6 +317,55 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="getFleetHosAuthenticationLogs"></a>
+# **getFleetHosAuthenticationLogs**
+> HosAuthenticationLogsResponse getFleetHosAuthenticationLogs(accessToken, hosAuthenticationLogsParam)
+
+/fleet/hos_authentication_logs
+
+Get the HOS (hours of service) signin and signout logs for the specified driver. Only signout logs include location information.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | Samsara API access token.
+
+var hosAuthenticationLogsParam = new SamsaraApi.HosAuthenticationLogsParam(); // HosAuthenticationLogsParam | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFleetHosAuthenticationLogs(accessToken, hosAuthenticationLogsParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **hosAuthenticationLogsParam** | [**HosAuthenticationLogsParam**](HosAuthenticationLogsParam.md)|  | 
+
+### Return type
+
+[**HosAuthenticationLogsResponse**](HosAuthenticationLogsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="getFleetHosLogs"></a>
 # **getFleetHosLogs**
 > HosLogsResponse getFleetHosLogs(accessToken, hosLogsParam)
@@ -366,7 +417,7 @@ No authorization required
 
 <a name="getFleetLocations"></a>
 # **getFleetLocations**
-> InlineResponse2001 getFleetLocations(accessToken, groupParam)
+> InlineResponse2002 getFleetLocations(accessToken, groupParam)
 
 /fleet/locations
 
@@ -402,7 +453,56 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFleetMaintenanceList"></a>
+# **getFleetMaintenanceList**
+> InlineResponse2003 getFleetMaintenanceList(accessToken, groupParam)
+
+/fleet/maintenance/list
+
+Get list of the vehicles with any engine faults or check light data.
+
+### Example
+```javascript
+var SamsaraApi = require('samsara_api');
+
+var apiInstance = new SamsaraApi.DefaultApi();
+
+var accessToken = "accessToken_example"; // String | Samsara API access token.
+
+var groupParam = new SamsaraApi.GroupParam(); // GroupParam | Group ID to query.
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFleetMaintenanceList(accessToken, groupParam, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Samsara API access token. | 
+ **groupParam** | [**GroupParam**](GroupParam.md)| Group ID to query. | 
+
+### Return type
+
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -464,7 +564,7 @@ No authorization required
 
 <a name="getSensors"></a>
 # **getSensors**
-> InlineResponse2002 getSensors(accessToken, groupParam)
+> InlineResponse200 getSensors(accessToken, groupParam)
 
 /sensors/list
 
@@ -500,7 +600,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

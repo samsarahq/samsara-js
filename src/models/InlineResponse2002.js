@@ -9,34 +9,23 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/Sensor'], factory);
+    define(['ApiClient', 'models/VehicleLocation'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Sensor'));
+    module.exports = factory(require('../ApiClient'), require('./VehicleLocation'));
   } else {
     // Browser globals (root is window)
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.InlineResponse2002 = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.Sensor);
+    root.SamsaraApi.InlineResponse2002 = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.VehicleLocation);
   }
-}(this, function(ApiClient, Sensor) {
+}(this, function(ApiClient, VehicleLocation) {
   'use strict';
 
 
@@ -57,6 +46,7 @@
     var _this = this;
 
 
+
   };
 
   /**
@@ -70,17 +60,25 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('sensors')) {
-        obj['sensors'] = ApiClient.convertToType(data['sensors'], [Sensor]);
+      if (data.hasOwnProperty('groupId')) {
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Number');
+      }
+      if (data.hasOwnProperty('vehicles')) {
+        obj['vehicles'] = ApiClient.convertToType(data['vehicles'], [VehicleLocation]);
       }
     }
     return obj;
   }
 
   /**
-   * @member {Array.<module:models/Sensor>} sensors
+   * Group ID to query.
+   * @member {Number} groupId
    */
-  exports.prototype['sensors'] = undefined;
+  exports.prototype['groupId'] = undefined;
+  /**
+   * @member {Array.<module:models/VehicleLocation>} vehicles
+   */
+  exports.prototype['vehicles'] = undefined;
 
 
 

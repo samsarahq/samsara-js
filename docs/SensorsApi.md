@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getSensors"></a>
 # **getSensors**
-> InlineResponse2002 getSensors(accessToken, groupParam)
+> InlineResponse200 getSensors(accessToken, groupParam)
 
 /sensors/list
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

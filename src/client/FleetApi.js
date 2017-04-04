@@ -9,34 +9,23 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/AddressParam', 'models/ErrorResponse', 'models/DispatchJobsResponse', 'models/CreateDispatchJobsParam', 'models/InlineResponse200', 'models/GroupParam', 'models/GetDispatchJobsParam', 'models/DriversRespose', 'models/GroupDriversParam', 'models/DriversSummaryParam', 'models/DriversSummaryResponse', 'models/HosLogsResponse', 'models/HosLogsParam', 'models/InlineResponse2001', 'models/TripResponse', 'models/TripsParam', 'models/UpdateDispatchJobsParam', 'models/VehicleUpdateParam'], factory);
+    define(['ApiClient', 'models/AddressParam', 'models/CreateDispatchJobsParam', 'models/DispatchJobsResponse', 'models/DriversRespose', 'models/DriversSummaryParam', 'models/DriversSummaryResponse', 'models/ErrorResponse', 'models/GetDispatchJobsParam', 'models/GroupDriversParam', 'models/GroupParam', 'models/HosAuthenticationLogsParam', 'models/HosAuthenticationLogsResponse', 'models/HosLogsParam', 'models/HosLogsResponse', 'models/InlineResponse2001', 'models/InlineResponse2002', 'models/InlineResponse2003', 'models/TripResponse', 'models/TripsParam', 'models/UpdateDispatchJobsParam', 'models/VehicleUpdateParam'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../models/AddressParam'), require('../models/ErrorResponse'), require('../models/DispatchJobsResponse'), require('../models/CreateDispatchJobsParam'), require('../models/InlineResponse200'), require('../models/GroupParam'), require('../models/GetDispatchJobsParam'), require('../models/DriversRespose'), require('../models/GroupDriversParam'), require('../models/DriversSummaryParam'), require('../models/DriversSummaryResponse'), require('../models/HosLogsResponse'), require('../models/HosLogsParam'), require('../models/InlineResponse2001'), require('../models/TripResponse'), require('../models/TripsParam'), require('../models/UpdateDispatchJobsParam'), require('../models/VehicleUpdateParam'));
+    module.exports = factory(require('../ApiClient'), require('../models/AddressParam'), require('../models/CreateDispatchJobsParam'), require('../models/DispatchJobsResponse'), require('../models/DriversRespose'), require('../models/DriversSummaryParam'), require('../models/DriversSummaryResponse'), require('../models/ErrorResponse'), require('../models/GetDispatchJobsParam'), require('../models/GroupDriversParam'), require('../models/GroupParam'), require('../models/HosAuthenticationLogsParam'), require('../models/HosAuthenticationLogsResponse'), require('../models/HosLogsParam'), require('../models/HosLogsResponse'), require('../models/InlineResponse2001'), require('../models/InlineResponse2002'), require('../models/InlineResponse2003'), require('../models/TripResponse'), require('../models/TripsParam'), require('../models/UpdateDispatchJobsParam'), require('../models/VehicleUpdateParam'));
   } else {
     // Browser globals (root is window)
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.FleetApi = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.AddressParam, root.SamsaraApi.ErrorResponse, root.SamsaraApi.DispatchJobsResponse, root.SamsaraApi.CreateDispatchJobsParam, root.SamsaraApi.InlineResponse200, root.SamsaraApi.GroupParam, root.SamsaraApi.GetDispatchJobsParam, root.SamsaraApi.DriversRespose, root.SamsaraApi.GroupDriversParam, root.SamsaraApi.DriversSummaryParam, root.SamsaraApi.DriversSummaryResponse, root.SamsaraApi.HosLogsResponse, root.SamsaraApi.HosLogsParam, root.SamsaraApi.InlineResponse2001, root.SamsaraApi.TripResponse, root.SamsaraApi.TripsParam, root.SamsaraApi.UpdateDispatchJobsParam, root.SamsaraApi.VehicleUpdateParam);
+    root.SamsaraApi.FleetApi = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.AddressParam, root.SamsaraApi.CreateDispatchJobsParam, root.SamsaraApi.DispatchJobsResponse, root.SamsaraApi.DriversRespose, root.SamsaraApi.DriversSummaryParam, root.SamsaraApi.DriversSummaryResponse, root.SamsaraApi.ErrorResponse, root.SamsaraApi.GetDispatchJobsParam, root.SamsaraApi.GroupDriversParam, root.SamsaraApi.GroupParam, root.SamsaraApi.HosAuthenticationLogsParam, root.SamsaraApi.HosAuthenticationLogsResponse, root.SamsaraApi.HosLogsParam, root.SamsaraApi.HosLogsResponse, root.SamsaraApi.InlineResponse2001, root.SamsaraApi.InlineResponse2002, root.SamsaraApi.InlineResponse2003, root.SamsaraApi.TripResponse, root.SamsaraApi.TripsParam, root.SamsaraApi.UpdateDispatchJobsParam, root.SamsaraApi.VehicleUpdateParam);
   }
-}(this, function(ApiClient, AddressParam, ErrorResponse, DispatchJobsResponse, CreateDispatchJobsParam, InlineResponse200, GroupParam, GetDispatchJobsParam, DriversRespose, GroupDriversParam, DriversSummaryParam, DriversSummaryResponse, HosLogsResponse, HosLogsParam, InlineResponse2001, TripResponse, TripsParam, UpdateDispatchJobsParam, VehicleUpdateParam) {
+}(this, function(ApiClient, AddressParam, CreateDispatchJobsParam, DispatchJobsResponse, DriversRespose, DriversSummaryParam, DriversSummaryResponse, ErrorResponse, GetDispatchJobsParam, GroupDriversParam, GroupParam, HosAuthenticationLogsParam, HosAuthenticationLogsResponse, HosLogsParam, HosLogsResponse, InlineResponse2001, InlineResponse2002, InlineResponse2003, TripResponse, TripsParam, UpdateDispatchJobsParam, VehicleUpdateParam) {
   'use strict';
 
   /**
@@ -76,12 +65,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling addFleetAddress";
+        throw new Error("Missing the required parameter 'accessToken' when calling addFleetAddress");
       }
 
       // verify the required parameter 'addressParam' is set
       if (addressParam == undefined || addressParam == null) {
-        throw "Missing the required parameter 'addressParam' when calling addFleetAddress";
+        throw new Error("Missing the required parameter 'addressParam' when calling addFleetAddress");
       }
 
 
@@ -128,12 +117,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling createFleetDispatchJobs";
+        throw new Error("Missing the required parameter 'accessToken' when calling createFleetDispatchJobs");
       }
 
       // verify the required parameter 'createDispatchJobsParam' is set
       if (createDispatchJobsParam == undefined || createDispatchJobsParam == null) {
-        throw "Missing the required parameter 'createDispatchJobsParam' when calling createFleetDispatchJobs";
+        throw new Error("Missing the required parameter 'createDispatchJobsParam' when calling createFleetDispatchJobs");
       }
 
 
@@ -163,7 +152,7 @@
      * Callback function to receive the result of the getFleet operation.
      * @callback module:client/FleetApi~getFleetCallback
      * @param {String} error Error message, if any.
-     * @param {module:models/InlineResponse200} data The data returned by the service call.
+     * @param {module:models/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -173,19 +162,19 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/FleetApi~getFleetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:models/InlineResponse200}
+     * data is of type: {@link module:models/InlineResponse2001}
      */
     this.getFleet = function(accessToken, groupParam, callback) {
       var postBody = groupParam;
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleet";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleet");
       }
 
       // verify the required parameter 'groupParam' is set
       if (groupParam == undefined || groupParam == null) {
-        throw "Missing the required parameter 'groupParam' when calling getFleet";
+        throw new Error("Missing the required parameter 'groupParam' when calling getFleet");
       }
 
 
@@ -202,7 +191,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse200;
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
         '/fleet/list', 'POST',
@@ -232,12 +221,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleetDispatchJobs";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetDispatchJobs");
       }
 
       // verify the required parameter 'getDispatchJobsParam' is set
       if (getDispatchJobsParam == undefined || getDispatchJobsParam == null) {
-        throw "Missing the required parameter 'getDispatchJobsParam' when calling getFleetDispatchJobs";
+        throw new Error("Missing the required parameter 'getDispatchJobsParam' when calling getFleetDispatchJobs");
       }
 
 
@@ -284,12 +273,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleetDrivers";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetDrivers");
       }
 
       // verify the required parameter 'groupDriversParam' is set
       if (groupDriversParam == undefined || groupDriversParam == null) {
-        throw "Missing the required parameter 'groupDriversParam' when calling getFleetDrivers";
+        throw new Error("Missing the required parameter 'groupDriversParam' when calling getFleetDrivers");
       }
 
 
@@ -336,12 +325,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleetDriversSummary";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetDriversSummary");
       }
 
       // verify the required parameter 'driversSummaryParam' is set
       if (driversSummaryParam == undefined || driversSummaryParam == null) {
-        throw "Missing the required parameter 'driversSummaryParam' when calling getFleetDriversSummary";
+        throw new Error("Missing the required parameter 'driversSummaryParam' when calling getFleetDriversSummary");
       }
 
 
@@ -368,6 +357,58 @@
     }
 
     /**
+     * Callback function to receive the result of the getFleetHosAuthenticationLogs operation.
+     * @callback module:client/FleetApi~getFleetHosAuthenticationLogsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:models/HosAuthenticationLogsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /fleet/hos_authentication_logs
+     * Get the HOS (hours of service) signin and signout logs for the specified driver. Only signout logs include location information.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/HosAuthenticationLogsParam} hosAuthenticationLogsParam 
+     * @param {module:client/FleetApi~getFleetHosAuthenticationLogsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:models/HosAuthenticationLogsResponse}
+     */
+    this.getFleetHosAuthenticationLogs = function(accessToken, hosAuthenticationLogsParam, callback) {
+      var postBody = hosAuthenticationLogsParam;
+
+      // verify the required parameter 'accessToken' is set
+      if (accessToken == undefined || accessToken == null) {
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetHosAuthenticationLogs");
+      }
+
+      // verify the required parameter 'hosAuthenticationLogsParam' is set
+      if (hosAuthenticationLogsParam == undefined || hosAuthenticationLogsParam == null) {
+        throw new Error("Missing the required parameter 'hosAuthenticationLogsParam' when calling getFleetHosAuthenticationLogs");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'access_token': accessToken
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = HosAuthenticationLogsResponse;
+
+      return this.apiClient.callApi(
+        '/fleet/hos_authentication_logs', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the getFleetHosLogs operation.
      * @callback module:client/FleetApi~getFleetHosLogsCallback
      * @param {String} error Error message, if any.
@@ -388,12 +429,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleetHosLogs";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetHosLogs");
       }
 
       // verify the required parameter 'hosLogsParam' is set
       if (hosLogsParam == undefined || hosLogsParam == null) {
-        throw "Missing the required parameter 'hosLogsParam' when calling getFleetHosLogs";
+        throw new Error("Missing the required parameter 'hosLogsParam' when calling getFleetHosLogs");
       }
 
 
@@ -423,7 +464,7 @@
      * Callback function to receive the result of the getFleetLocations operation.
      * @callback module:client/FleetApi~getFleetLocationsCallback
      * @param {String} error Error message, if any.
-     * @param {module:models/InlineResponse2001} data The data returned by the service call.
+     * @param {module:models/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -433,19 +474,19 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/FleetApi~getFleetLocationsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:models/InlineResponse2001}
+     * data is of type: {@link module:models/InlineResponse2002}
      */
     this.getFleetLocations = function(accessToken, groupParam, callback) {
       var postBody = groupParam;
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleetLocations";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetLocations");
       }
 
       // verify the required parameter 'groupParam' is set
       if (groupParam == undefined || groupParam == null) {
-        throw "Missing the required parameter 'groupParam' when calling getFleetLocations";
+        throw new Error("Missing the required parameter 'groupParam' when calling getFleetLocations");
       }
 
 
@@ -462,10 +503,62 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2001;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
         '/fleet/locations', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getFleetMaintenanceList operation.
+     * @callback module:client/FleetApi~getFleetMaintenanceListCallback
+     * @param {String} error Error message, if any.
+     * @param {module:models/InlineResponse2003} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * /fleet/maintenance/list
+     * Get list of the vehicles with any engine faults or check light data.
+     * @param {String} accessToken Samsara API access token.
+     * @param {module:models/GroupParam} groupParam Group ID to query.
+     * @param {module:client/FleetApi~getFleetMaintenanceListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:models/InlineResponse2003}
+     */
+    this.getFleetMaintenanceList = function(accessToken, groupParam, callback) {
+      var postBody = groupParam;
+
+      // verify the required parameter 'accessToken' is set
+      if (accessToken == undefined || accessToken == null) {
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetMaintenanceList");
+      }
+
+      // verify the required parameter 'groupParam' is set
+      if (groupParam == undefined || groupParam == null) {
+        throw new Error("Missing the required parameter 'groupParam' when calling getFleetMaintenanceList");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'access_token': accessToken
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InlineResponse2003;
+
+      return this.apiClient.callApi(
+        '/fleet/maintenance/list', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -492,12 +585,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getFleetTrips";
+        throw new Error("Missing the required parameter 'accessToken' when calling getFleetTrips");
       }
 
       // verify the required parameter 'tripsParam' is set
       if (tripsParam == undefined || tripsParam == null) {
-        throw "Missing the required parameter 'tripsParam' when calling getFleetTrips";
+        throw new Error("Missing the required parameter 'tripsParam' when calling getFleetTrips");
       }
 
 
@@ -544,12 +637,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling updateFleetDispatchJobs";
+        throw new Error("Missing the required parameter 'accessToken' when calling updateFleetDispatchJobs");
       }
 
       // verify the required parameter 'updateDispatchJobsParam' is set
       if (updateDispatchJobsParam == undefined || updateDispatchJobsParam == null) {
-        throw "Missing the required parameter 'updateDispatchJobsParam' when calling updateFleetDispatchJobs";
+        throw new Error("Missing the required parameter 'updateDispatchJobsParam' when calling updateFleetDispatchJobs");
       }
 
 
@@ -595,12 +688,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling updateVehicles";
+        throw new Error("Missing the required parameter 'accessToken' when calling updateVehicles");
       }
 
       // verify the required parameter 'vehicleUpdateParam' is set
       if (vehicleUpdateParam == undefined || vehicleUpdateParam == null) {
-        throw "Missing the required parameter 'vehicleUpdateParam' when calling updateVehicles";
+        throw new Error("Missing the required parameter 'vehicleUpdateParam' when calling updateVehicles");
       }
 
 

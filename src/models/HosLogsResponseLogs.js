@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -65,6 +54,7 @@
 
 
 
+
   };
 
   /**
@@ -79,16 +69,16 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('groupId')) {
-        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Integer');
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Number');
       }
       if (data.hasOwnProperty('vehicleId')) {
-        obj['vehicleId'] = ApiClient.convertToType(data['vehicleId'], 'Integer');
+        obj['vehicleId'] = ApiClient.convertToType(data['vehicleId'], 'Number');
       }
       if (data.hasOwnProperty('driverId')) {
-        obj['driverId'] = ApiClient.convertToType(data['driverId'], 'Integer');
+        obj['driverId'] = ApiClient.convertToType(data['driverId'], 'Number');
       }
       if (data.hasOwnProperty('logStartMs')) {
-        obj['logStartMs'] = ApiClient.convertToType(data['logStartMs'], 'Integer');
+        obj['logStartMs'] = ApiClient.convertToType(data['logStartMs'], 'Number');
       }
       if (data.hasOwnProperty('statusType')) {
         obj['statusType'] = ApiClient.convertToType(data['statusType'], 'String');
@@ -105,28 +95,31 @@
       if (data.hasOwnProperty('locLng')) {
         obj['locLng'] = ApiClient.convertToType(data['locLng'], 'Number');
       }
+      if (data.hasOwnProperty('locName')) {
+        obj['locName'] = ApiClient.convertToType(data['locName'], 'String');
+      }
     }
     return obj;
   }
 
   /**
    * ID of the group.
-   * @member {Integer} groupId
+   * @member {Number} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
    * ID of the vehicle.
-   * @member {Integer} vehicleId
+   * @member {Number} vehicleId
    */
   exports.prototype['vehicleId'] = undefined;
   /**
    * ID of the driver.
-   * @member {Integer} driverId
+   * @member {Number} driverId
    */
   exports.prototype['driverId'] = undefined;
   /**
    * The time at which the log/HOS status started in UNIX milliseconds.
-   * @member {Integer} logStartMs
+   * @member {Number} logStartMs
    */
   exports.prototype['logStartMs'] = undefined;
   /**
@@ -154,6 +147,11 @@
    * @member {Number} locLng
    */
   exports.prototype['locLng'] = undefined;
+  /**
+   * Name of location at which the log was recorded.
+   * @member {String} locName
+   */
+  exports.prototype['locName'] = undefined;
 
 
 

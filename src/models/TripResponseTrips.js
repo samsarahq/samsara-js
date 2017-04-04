@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -77,7 +66,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('startMs')) {
-        obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Integer');
+        obj['startMs'] = ApiClient.convertToType(data['startMs'], 'Number');
       }
       if (data.hasOwnProperty('startCoordinates')) {
         obj['startCoordinates'] = TripResponseStartCoordinates.constructFromObject(data['startCoordinates']);
@@ -86,7 +75,7 @@
         obj['startLocation'] = ApiClient.convertToType(data['startLocation'], 'String');
       }
       if (data.hasOwnProperty('endMs')) {
-        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Integer');
+        obj['endMs'] = ApiClient.convertToType(data['endMs'], 'Number');
       }
       if (data.hasOwnProperty('endCoordinates')) {
         obj['endCoordinates'] = TripResponseEndCoordinates.constructFromObject(data['endCoordinates']);
@@ -95,7 +84,7 @@
         obj['endLocation'] = ApiClient.convertToType(data['endLocation'], 'String');
       }
       if (data.hasOwnProperty('distanceMeters')) {
-        obj['distanceMeters'] = ApiClient.convertToType(data['distanceMeters'], 'Integer');
+        obj['distanceMeters'] = ApiClient.convertToType(data['distanceMeters'], 'Number');
       }
     }
     return obj;
@@ -103,7 +92,7 @@
 
   /**
    * Beginning of the trip in UNIX milliseconds.
-   * @member {Integer} startMs
+   * @member {Number} startMs
    */
   exports.prototype['startMs'] = undefined;
   /**
@@ -117,7 +106,7 @@
   exports.prototype['startLocation'] = undefined;
   /**
    * End of the trip in UNIX milliseconds.
-   * @member {Integer} endMs
+   * @member {Number} endMs
    */
   exports.prototype['endMs'] = undefined;
   /**
@@ -131,7 +120,7 @@
   exports.prototype['endLocation'] = undefined;
   /**
    * Length of the trip in meters.
-   * @member {Integer} distanceMeters
+   * @member {Number} distanceMeters
    */
   exports.prototype['distanceMeters'] = undefined;
 

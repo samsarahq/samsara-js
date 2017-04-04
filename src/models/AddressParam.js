@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -52,10 +41,10 @@
    * Constructs a new <code>AddressParam</code>.
    * @alias module:models/AddressParam
    * @class
-   * @param groupId {Integer} Group ID to query.
+   * @param groupId {Number} Group ID to query.
    * @param name {String} Name of the location to add to the address book.
    * @param address {String} The address of the entry to add, as it would be recognized if provided to maps.google.com.
-   * @param radius {Integer} Radius in meters of the address (used for matching vehicle trip stops to this location).
+   * @param radius {Number} Radius in meters of the address (used for matching vehicle trip stops to this location).
    */
   var exports = function(groupId, name, address, radius) {
     var _this = this;
@@ -78,7 +67,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('groupId')) {
-        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Integer');
+        obj['groupId'] = ApiClient.convertToType(data['groupId'], 'Number');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -87,7 +76,7 @@
         obj['address'] = ApiClient.convertToType(data['address'], 'String');
       }
       if (data.hasOwnProperty('radius')) {
-        obj['radius'] = ApiClient.convertToType(data['radius'], 'Integer');
+        obj['radius'] = ApiClient.convertToType(data['radius'], 'Number');
       }
     }
     return obj;
@@ -95,7 +84,7 @@
 
   /**
    * Group ID to query.
-   * @member {Integer} groupId
+   * @member {Number} groupId
    */
   exports.prototype['groupId'] = undefined;
   /**
@@ -110,7 +99,7 @@
   exports.prototype['address'] = undefined;
   /**
    * Radius in meters of the address (used for matching vehicle trip stops to this location).
-   * @member {Integer} radius
+   * @member {Number} radius
    */
   exports.prototype['radius'] = undefined;
 

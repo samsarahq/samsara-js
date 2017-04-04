@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -73,13 +62,13 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
       if (data.hasOwnProperty('ambientTemperature')) {
-        obj['ambientTemperature'] = ApiClient.convertToType(data['ambientTemperature'], 'Integer');
+        obj['ambientTemperature'] = ApiClient.convertToType(data['ambientTemperature'], 'Number');
       }
       if (data.hasOwnProperty('probeTemperature')) {
-        obj['probeTemperature'] = ApiClient.convertToType(data['probeTemperature'], 'Integer');
+        obj['probeTemperature'] = ApiClient.convertToType(data['probeTemperature'], 'Number');
       }
     }
     return obj;
@@ -87,17 +76,17 @@
 
   /**
    * ID of the sensor.
-   * @member {Integer} id
+   * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
    * Currently reported ambient temperature in millidegrees celsius.
-   * @member {Integer} ambientTemperature
+   * @member {Number} ambientTemperature
    */
   exports.prototype['ambientTemperature'] = undefined;
   /**
    * Currently reported probe temperature in millidegrees celsius. If no probe is connected, this parameter will not be reported.
-   * @member {Integer} probeTemperature
+   * @member {Number} probeTemperature
    */
   exports.prototype['probeTemperature'] = undefined;
 

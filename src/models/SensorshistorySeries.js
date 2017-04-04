@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -53,7 +42,7 @@
    * Sensor ID and field to query.
    * @alias module:models/SensorshistorySeries
    * @class
-   * @param widgetId {Integer} Sensor ID to query.
+   * @param widgetId {Number} Sensor ID to query.
    * @param field {module:models/SensorshistorySeries.FieldEnum} Field to query.
    */
   var exports = function(widgetId, field) {
@@ -75,7 +64,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('widgetId')) {
-        obj['widgetId'] = ApiClient.convertToType(data['widgetId'], 'Integer');
+        obj['widgetId'] = ApiClient.convertToType(data['widgetId'], 'Number');
       }
       if (data.hasOwnProperty('field')) {
         obj['field'] = ApiClient.convertToType(data['field'], 'String');
@@ -86,7 +75,7 @@
 
   /**
    * Sensor ID to query.
-   * @member {Integer} widgetId
+   * @member {Number} widgetId
    */
   exports.prototype['widgetId'] = undefined;
   /**

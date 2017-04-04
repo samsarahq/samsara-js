@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sensors** | [**[Sensor]**](Sensor.md) |  | [optional] 
+**groupId** | **Number** | Group ID to query. | [optional] 
+**vehicles** | [**[VehicleLocation]**](VehicleLocation.md) |  | [optional] 
 
 

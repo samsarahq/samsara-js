@@ -9,34 +9,23 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'models/GroupParam', 'models/InlineResponse2002', 'models/ErrorResponse', 'models/HistoryParam', 'models/SensorHistoryResponse', 'models/HumidityResponse', 'models/SensorParam', 'models/TemperatureResponse'], factory);
+    define(['ApiClient', 'models/ErrorResponse', 'models/GroupParam', 'models/HistoryParam', 'models/HumidityResponse', 'models/InlineResponse200', 'models/SensorHistoryResponse', 'models/SensorParam', 'models/TemperatureResponse'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../models/GroupParam'), require('../models/InlineResponse2002'), require('../models/ErrorResponse'), require('../models/HistoryParam'), require('../models/SensorHistoryResponse'), require('../models/HumidityResponse'), require('../models/SensorParam'), require('../models/TemperatureResponse'));
+    module.exports = factory(require('../ApiClient'), require('../models/ErrorResponse'), require('../models/GroupParam'), require('../models/HistoryParam'), require('../models/HumidityResponse'), require('../models/InlineResponse200'), require('../models/SensorHistoryResponse'), require('../models/SensorParam'), require('../models/TemperatureResponse'));
   } else {
     // Browser globals (root is window)
     if (!root.SamsaraApi) {
       root.SamsaraApi = {};
     }
-    root.SamsaraApi.SensorsApi = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.GroupParam, root.SamsaraApi.InlineResponse2002, root.SamsaraApi.ErrorResponse, root.SamsaraApi.HistoryParam, root.SamsaraApi.SensorHistoryResponse, root.SamsaraApi.HumidityResponse, root.SamsaraApi.SensorParam, root.SamsaraApi.TemperatureResponse);
+    root.SamsaraApi.SensorsApi = factory(root.SamsaraApi.ApiClient, root.SamsaraApi.ErrorResponse, root.SamsaraApi.GroupParam, root.SamsaraApi.HistoryParam, root.SamsaraApi.HumidityResponse, root.SamsaraApi.InlineResponse200, root.SamsaraApi.SensorHistoryResponse, root.SamsaraApi.SensorParam, root.SamsaraApi.TemperatureResponse);
   }
-}(this, function(ApiClient, GroupParam, InlineResponse2002, ErrorResponse, HistoryParam, SensorHistoryResponse, HumidityResponse, SensorParam, TemperatureResponse) {
+}(this, function(ApiClient, ErrorResponse, GroupParam, HistoryParam, HumidityResponse, InlineResponse200, SensorHistoryResponse, SensorParam, TemperatureResponse) {
   'use strict';
 
   /**
@@ -60,7 +49,7 @@
      * Callback function to receive the result of the getSensors operation.
      * @callback module:client/SensorsApi~getSensorsCallback
      * @param {String} error Error message, if any.
-     * @param {module:models/InlineResponse2002} data The data returned by the service call.
+     * @param {module:models/InlineResponse200} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -70,19 +59,19 @@
      * @param {String} accessToken Samsara API access token.
      * @param {module:models/GroupParam} groupParam Group ID to query.
      * @param {module:client/SensorsApi~getSensorsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:models/InlineResponse2002}
+     * data is of type: {@link module:models/InlineResponse200}
      */
     this.getSensors = function(accessToken, groupParam, callback) {
       var postBody = groupParam;
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getSensors";
+        throw new Error("Missing the required parameter 'accessToken' when calling getSensors");
       }
 
       // verify the required parameter 'groupParam' is set
       if (groupParam == undefined || groupParam == null) {
-        throw "Missing the required parameter 'groupParam' when calling getSensors";
+        throw new Error("Missing the required parameter 'groupParam' when calling getSensors");
       }
 
 
@@ -99,7 +88,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = InlineResponse2002;
+      var returnType = InlineResponse200;
 
       return this.apiClient.callApi(
         '/sensors/list', 'POST',
@@ -129,12 +118,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getSensorsHistory";
+        throw new Error("Missing the required parameter 'accessToken' when calling getSensorsHistory");
       }
 
       // verify the required parameter 'historyParam' is set
       if (historyParam == undefined || historyParam == null) {
-        throw "Missing the required parameter 'historyParam' when calling getSensorsHistory";
+        throw new Error("Missing the required parameter 'historyParam' when calling getSensorsHistory");
       }
 
 
@@ -181,12 +170,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getSensorsHumidity";
+        throw new Error("Missing the required parameter 'accessToken' when calling getSensorsHumidity");
       }
 
       // verify the required parameter 'sensorParam' is set
       if (sensorParam == undefined || sensorParam == null) {
-        throw "Missing the required parameter 'sensorParam' when calling getSensorsHumidity";
+        throw new Error("Missing the required parameter 'sensorParam' when calling getSensorsHumidity");
       }
 
 
@@ -233,12 +222,12 @@
 
       // verify the required parameter 'accessToken' is set
       if (accessToken == undefined || accessToken == null) {
-        throw "Missing the required parameter 'accessToken' when calling getSensorsTemperature";
+        throw new Error("Missing the required parameter 'accessToken' when calling getSensorsTemperature");
       }
 
       // verify the required parameter 'sensorParam' is set
       if (sensorParam == undefined || sensorParam == null) {
-        throw "Missing the required parameter 'sensorParam' when calling getSensorsTemperature";
+        throw new Error("Missing the required parameter 'sensorParam' when calling getSensorsTemperature");
       }
 
 

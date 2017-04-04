@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -87,28 +76,28 @@
         obj['external_identifier'] = ApiClient.convertToType(data['external_identifier'], 'String');
       }
       if (data.hasOwnProperty('driver_id')) {
-        obj['driver_id'] = ApiClient.convertToType(data['driver_id'], 'Integer');
+        obj['driver_id'] = ApiClient.convertToType(data['driver_id'], 'Number');
       }
       if (data.hasOwnProperty('vehicle_id')) {
-        obj['vehicle_id'] = ApiClient.convertToType(data['vehicle_id'], 'Integer');
+        obj['vehicle_id'] = ApiClient.convertToType(data['vehicle_id'], 'Number');
       }
       if (data.hasOwnProperty('job_state')) {
         obj['job_state'] = ApiClient.convertToType(data['job_state'], 'String');
       }
       if (data.hasOwnProperty('scheduled_arrival_time_ms')) {
-        obj['scheduled_arrival_time_ms'] = ApiClient.convertToType(data['scheduled_arrival_time_ms'], 'Integer');
+        obj['scheduled_arrival_time_ms'] = ApiClient.convertToType(data['scheduled_arrival_time_ms'], 'Number');
       }
       if (data.hasOwnProperty('started_at_ms')) {
-        obj['started_at_ms'] = ApiClient.convertToType(data['started_at_ms'], 'Integer');
+        obj['started_at_ms'] = ApiClient.convertToType(data['started_at_ms'], 'Number');
       }
       if (data.hasOwnProperty('completed_at_ms')) {
-        obj['completed_at_ms'] = ApiClient.convertToType(data['completed_at_ms'], 'Integer');
+        obj['completed_at_ms'] = ApiClient.convertToType(data['completed_at_ms'], 'Number');
       }
       if (data.hasOwnProperty('cancelled_at_ms')) {
-        obj['cancelled_at_ms'] = ApiClient.convertToType(data['cancelled_at_ms'], 'Integer');
+        obj['cancelled_at_ms'] = ApiClient.convertToType(data['cancelled_at_ms'], 'Number');
       }
       if (data.hasOwnProperty('job_created_at_ms')) {
-        obj['job_created_at_ms'] = ApiClient.convertToType(data['job_created_at_ms'], 'Integer');
+        obj['job_created_at_ms'] = ApiClient.convertToType(data['job_created_at_ms'], 'Number');
       }
       if (data.hasOwnProperty('notes')) {
         obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
@@ -136,12 +125,12 @@
   exports.prototype['external_identifier'] = undefined;
   /**
    * ID of the driver assigned to the dispatch job.
-   * @member {Integer} driver_id
+   * @member {Number} driver_id
    */
   exports.prototype['driver_id'] = undefined;
   /**
    * ID of the vehicle used for the dispatch job.
-   * @member {Integer} vehicle_id
+   * @member {Number} vehicle_id
    */
   exports.prototype['vehicle_id'] = undefined;
   /**
@@ -151,27 +140,27 @@
   exports.prototype['job_state'] = undefined;
   /**
    * The time at which the assigned driver is scheduled to arrive at the job destination.
-   * @member {Integer} scheduled_arrival_time_ms
+   * @member {Number} scheduled_arrival_time_ms
    */
   exports.prototype['scheduled_arrival_time_ms'] = undefined;
   /**
    * The time at which the assigned driver started fulfilling the job (e.g. started driving to the destination).
-   * @member {Integer} started_at_ms
+   * @member {Number} started_at_ms
    */
   exports.prototype['started_at_ms'] = undefined;
   /**
    * The time at which the job was marked complete.
-   * @member {Integer} completed_at_ms
+   * @member {Number} completed_at_ms
    */
   exports.prototype['completed_at_ms'] = undefined;
   /**
    * The time at which the job was marked cancelled.
-   * @member {Integer} cancelled_at_ms
+   * @member {Number} cancelled_at_ms
    */
   exports.prototype['cancelled_at_ms'] = undefined;
   /**
    * The time at which the job was created.
-   * @member {Integer} job_created_at_ms
+   * @member {Number} job_created_at_ms
    */
   exports.prototype['job_created_at_ms'] = undefined;
   /**

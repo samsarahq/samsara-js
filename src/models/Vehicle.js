@@ -9,17 +9,6 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
  */
 
 (function(root, factory) {
@@ -53,12 +42,14 @@
    * A vehicle object.
    * @alias module:models/Vehicle
    * @class
-   * @param id {Integer} ID of the vehicle.
+   * @param id {Number} ID of the vehicle.
    */
   var exports = function(id) {
     var _this = this;
 
     _this['id'] = id;
+
+
 
 
   };
@@ -75,7 +66,7 @@
       obj = obj || new exports();
 
       if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Integer');
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -83,13 +74,19 @@
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
       }
+      if (data.hasOwnProperty('vin')) {
+        obj['vin'] = ApiClient.convertToType(data['vin'], 'String');
+      }
+      if (data.hasOwnProperty('odometerMeters')) {
+        obj['odometerMeters'] = ApiClient.convertToType(data['odometerMeters'], 'Number');
+      }
     }
     return obj;
   }
 
   /**
    * ID of the vehicle.
-   * @member {Integer} id
+   * @member {Number} id
    */
   exports.prototype['id'] = undefined;
   /**
@@ -101,6 +98,16 @@
    * @member {String} note
    */
   exports.prototype['note'] = undefined;
+  /**
+   * Vehicle Identification Number.
+   * @member {String} vin
+   */
+  exports.prototype['vin'] = undefined;
+  /**
+   * The number of meters reported by the odometer.
+   * @member {Number} odometerMeters
+   */
+  exports.prototype['odometerMeters'] = undefined;
 
 
 
